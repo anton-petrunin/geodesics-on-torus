@@ -1,0 +1,211 @@
+% Build with latexmk -pdf torus.tex. The figures are included in mppics.
+\documentclass[a4paper,10pt]{article}
+\usepackage{hyperref}
+\usepackage{paper-en}
+
+\def\thetitle{Tori without contractible closed geodesics}
+\def\theauthors{Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}}
+
+\begin{document}
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+We show that a Riemannian two-torus has no contractible closed geodesics if and only if it admits a geodesic foliation.
+\end{abstract}
+
+\section{Introduction}
+
+\begin{thm}{Theorem}\label{thm:main}
+A Riemannian 2-torus $(\TT^2,g)$ has no contractible closed geodesics if and only if it admits a geodesic foliation.
+\end{thm}
+
+Note that Riemannian 2-torus $(\TT^2,g)$ has a contractible closed geodesic if and only if the univeral metric covering $(\RR^2,\tilde g)$ has a closed geodesic.
+Thus the theorem is equivalent to the following statement that we will actually prove.
+
+\begin{thm}{Reformulation}
+Let $\tilde g$ is a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
+Then $(\RR^2, \tilde g)$ has no closed geodesics if and only if it admits a $\ZZ^2$-peridic geodesic foliation.
+\end{thm}
+
+The if part follows by the argument of Y. Colin de Verdière \cite[7.9]{gromov}:
+
+\parit{Proof of the if part.}
+Any geodesic in $(\RR^2, \tilde g)$ either runs along the foliation and therefore cannot come back, or it crosses leaves of foliation transversely in one direction and therefore it cannot come back.
+\qeds
+
+The remaining part of the note deals with the only-if part.
+
+\section{Preliminaries}\label{sec:prelim}
+
+A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
+
+Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
+We will denote by $|p-q|_{\tilde g}$ the distance induced by $\tilde g$.
+Given a  unit vector $\xi\in\mathbb\SSS^1$, consider the \emph{Busemann function}
+\[\bus_\xi(p)=\lim_{t\to\infty} (|t\cdot \xi-p|_g-|t\cdot \xi-0|_g).\eqlbl{eq:def-busemann}\]
+If $\xi$ is irrational, then $\bus_\xi$ is a uniquely defined $1$-Lipschitz function.
+In this case any $\ZZ^2$-shift changes $\bus_\xi$ by a constant \cite[7.1(i)]{schroeder-survey}.
+
+For a rational direction $\xi$ the limit in \ref{eq:def-busemann} might not exist, but we always can define the \emph{left} and \emph{right} Busemann functions \cite[4.15]{schroeder-survey}:
+\[
+\bus_{\xi\downarrow}=\lim_{\zeta\searrow\xi} \bus_\zeta,
+\quad\text{and}\quad
+\bus_{\xi\uparrow}=\lim_{\zeta\nearrow \xi} \bus_\zeta;
+\]
+here $\zeta$ is assumed to be irrational, and $\zeta\searrow \xi$ and $\zeta\nearrow \xi$ means that $\zeta$ approaches $\xi$ from left (respectively right) side.
+Thus $\bus_\xi=\bus_{\xi\downarrow}=\bus_{\xi\uparrow}$ for any irrational $\xi$.
+
+The left and right Busemann \emph{error} for direction $\xi$ will be defined as
+\[
+\ex_{\xi\downarrow}=\bus_{\xi\downarrow}+\bus_{-\xi\downarrow},
+\quad\text{and}\quad
+\ex_{\xi\uparrow}=\bus_{\xi\uparrow}+\bus_{-\xi\uparrow}.
+\]
+The functions $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ are $\ZZ^2$-periodic;
+indeed, $\ZZ^2$-shift changes $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ by a constant and by the triangle inequality, both functions are bounded below.
+If $\ex_{\xi\downarrow}$ or $\ex_{\xi\uparrow}$ is constant, then it is identically zero;
+in this case $(\RR^2,\tilde g)$ is foliated by lines in the direction $\xi$.
+Again, if $\xi$ is irrational, then $\ex_{\xi\downarrow}=\ex_{\xi\uparrow}$, and this function can be denoted by $\ex_\xi$.
+
+By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line (it also holds for Finsler metrics \cite[3.1]{schroeder-survey}).
+In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
+For a line $\ell$ we have two asymptotic direction of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem.
+
+If $f\circ\gamma(t)=\pm t+\const$ for a 1-Lipschitz curve $\gamma$ and 1-Lipschitz function $f$,
+then we say that $\gamma$ is \emph{calibrated} by $f$;
+in this case $\gamma$ is a minimizing geodesic.
+
+Given a direction $\xi\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[a,\infty)\to(\RR^2,\tilde g)$ with $\dir h=\xi$.
+Moreover, we can assume that $h$ is calibrated by
+$\bus_{\xi\uparrow}$ (or $\bus_{\xi\downarrow}$).
+Furthermore, we can find a line $\ell\colon\RR\to(\RR^2,\tilde g)$ with directions $-\xi$ and $\xi$ such that is calibrated by $\bus_{\xi\uparrow}$ (or $\bus_{\xi\downarrow}$).
+
+A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ sift;
+these lines project to periodic geodesics in the torus.
+If $\ell$ is periodic line for a shift in direction $\xi$ (which must be rational) then $\ell$ is calibrated by both Busemann functions $\bus_{\xi\uparrow}$ and $\bus_{\xi\downarrow}$.
+
+Periodic lines with respect to shifts $(x,y)\mapsto (x+1,y)$ are called horizontal.
+These are disjont lines.
+Their union is a closed set, say $H$ and the complement $\RR^2\setminus H$ is a union of disjoint open strips between pairs of horizontal lines.
+
+Let $\Sigma$ be a strip between lower and upper horizontal lines $\ell$ and $u$, and let $\xi=(1,0)$.
+The Buseman functions $\bus_{\xi\downarrow}$ and $\bus_{\xi\uparrow}$ calibrate lines in $\Sigma$ with asymptotes on $\ell$ and $u$.
+Namely $\bus_{\xi\downarrow}$ calibrates lines that approach $\ell$ at $-\infty$ and $u$ and $+\infty$,
+and $\bus_{\xi\uparrow}$ calibrates lines that approach $u$ at $-\infty$ and $\ell$ and $+\infty$.
+If $\ex_{\xi\downarrow}$ or $\ex_{\xi\uparrow}$ is constant in $\Sigma$, then $\Sigma$ is foliated by corresponding lines.
+
+%???PIC
+
+
+
+\section{Full turn from small turns}
+
+Let $s$ is a geodesic in $(\RR^2,\tilde g)$ with minimizing tales;
+that is, both tales of $s$ are half-lines, so the asymptotic direction of entrance and exit $\dir^-s$ and $\dir^+s$ are defined.
+We say that $s$ \emph{turns across} $\xi\in\SSS^1$ if $\xi$ lies on the left from $-\dir^-s$ and on the right $\dir^+s$;
+more precisely, the directions $\dir^-s$, $\dir^+s$, $\xi$ and $-\dir^-s$ appear in the same counterclockwise  cyclic order on $\SSS^1$.
+
+\begin{thm}{Key lemma}\label{lem:key}
+Suppose that the plane $\RR^2$ equipped with a $\ZZ^2$-periodic Riemannian metric $\tilde g$ does not admit a line foliation.
+Then for any direction $\xi$ of $\RR^2$ there is a geodesic $s$ with minimizing tales that turns across $\xi$.
+
+\end{thm}
+
+\parbf{Proof of the main theorem modulo the key lemma.}
+We can choose finite number of geodesic $s_1,\dots,s_n$ that turn across all directions.
+Since these geodesics have minimizing tales, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
+
+Construct a polygon $P$ from translated arcs of $r_i$ so that all angles at the join of arc are concave; that is, bigger than $\pi$.
+So the only convex vertices of $P$ are the corners inside the translated arcs.
+Rescaling $P$ up makes it possible to approximate all the arcs by integer translations of arcs of $s_i$.
+Since a pair of minimizing tales may cross only once,
+this produces a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with all concave angles, so the closure of the complement of $Q$ is locally convex.
+
+It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe that $\gamma$ is a closed geodesic in $(\RR^2,\tilde g)$.
+\qeds
+
+\section{Gates}
+
+The following observation provides a tool for constructing geodesic in the key lemma.
+Intuitively speaking, we scratch curves that pass a gate or two; if the obtained curve does not touch gate sides, then we get a geodesic.
+
+\begin{thm}{Observation}\label{obs:join}
+Let $\tilde g$ be $\ZZ^2$-periodic Riemannian metric on $\RR^2$,
+and let $z$ be a periodic line that separates two irrational directions $\alpha,\omega\in\SSS^1$.
+There is a turn from $\alpha$ to $\omega$ if one of the following condition holds:
+
+\begin{subthm}{}
+There is an arc $I$ in $z$ such that the minimum of function
+\[f\colon p\mapsto \bus_\alpha(p)+\bus_\omega(p)\]
+for $p\in I$ is strictly below both endpoint values.
+\end{subthm}
+
+%PIC???
+
+\begin{subthm}{}\label{obs:main2}
+There are two arcs $I$ in $z$ and $J$ on its $\ZZ^2$-shift $z'$ to the side of $z$ with $\omega$
+and the function
+\[f\colon (p,q)\mapsto \bus_\alpha(p)+|p-q|_g+\bus_\omega(q)\]
+for $p\in I$ and $q\in J$
+is strictly below its boundary values.
+\end{subthm}
+
+%PIC???
+
+\end{thm}
+
+\parbf{Proof of the key lemma.}
+Suppose $\xi\in\SSS^1$ is an irrational direction.
+Choose a periodic line $z$ that separates $-\xi$ and $\xi$.
+Note that $z$ crosses lines that calibrated by $\bus_\xi$.
+But not all points on $z$ lie on such lines, so $\ex_\xi(p)>0$ for some points $p\in z$.
+
+Thus we can choose a segment $I$ in $z$ that meets the condition of the observation for the function
+$f=\bus_{-\xi}+\bus_\xi$.
+Choose $\alpha\approx -\xi$ and $\omega\approx \xi$ and note that $I$ meets the condition for the function
+$f=\bus_{\alpha}+\bus_\omega$, and the observations finishes the proof.
+
+Now suppose $\xi$ is a rational direction.
+We may assume that $\xi$ corresponds to the horizontal shift $\tau\colon(x,y)\mapsto (x+1,y)$.
+Applying the observations about horizontal lines and strips at the end of §~\ref{sec:prelim},
+we can a strip $\Sigma$ bounded by horizontal lines $\ell$ and $u$ such that $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ are not constant in $\Sigma$.
+Note that we can choose a gate $I$ near $\ell$ that meet the first condition for function $f=\bus_{-\xi\uparrow}+\bus_{\xi\uparrow}$.
+The same way we can choose a gate $J$ near $\ell$ that meet the first condition for function $f=\bus_{-\xi\downarrow}+\bus_{\xi\downarrow}$.
+Now let us apply the huge horizontal shift to move $J$ far to the right from $I$.
+Minimizing geodesics between $I$ and $J$ nearly approach $\ell$ in the middle.
+And we can conclude that the pair $I$ and $J$ meet the condition in \ref{obs:main2} for the function
+\begin{align*}
+f\colon (p,q)&\mapsto \bus_{-\xi\uparrow}(p)+|p-q|_{\tilde g}+\bus_{\xi\downarrow}(q).
+\intertext{Therefore they also meet the assumptions of the observation for the function}
+f\colon (p,q)&\mapsto\bus_{\alpha}(p)+|p-q|_{\tilde g}+\bus_{\omega}(q)
+\end{align*}
+if
+$\alpha$ close to $-\xi$ and lying on its right side
+and
+$\omega$ close to $\xi$ and lying on its left side.
+Again the observation finishes the proof.
+\qeds
+
+
+
+
+\parbf{Acknowledgments.}
+The proof was found in collaboration with AI (GPT-6.2 Astra).
+
+{\sloppy
+\def\emph{\textit}
+\printbibliography[heading=bibintoc]\fussy}
+\end{document}
