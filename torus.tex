@@ -50,8 +50,8 @@ The remaining part of the note deals with the only-if part.
 
 \section{Preliminaries}\label{sec:prelim}
 
-A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
 
+\paragraph{Busemann functions.}
 Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
 We will denote by $|p-q|_{\tilde g}$ the distance induced by $\tilde g$.
 Given a  unit vector $\xi\in\mathbb\SSS^1$, consider the \emph{Busemann function}
@@ -59,7 +59,8 @@ Given a  unit vector $\xi\in\mathbb\SSS^1$, consider the \emph{Busemann function
 If $\xi$ is irrational, then $\bus_\xi$ is a uniquely defined $1$-Lipschitz function.
 In this case any $\ZZ^2$-shift changes $\bus_\xi$ by a constant \cite[7.1(i)]{schroeder-survey}.
 
-For a rational direction $\xi$ the limit in \ref{eq:def-busemann} might not exist, but we always can define the \emph{left} and \emph{right} Busemann functions \cite[4.15]{schroeder-survey}:
+For a rational direction $\xi$ the limit in \ref{eq:def-busemann} might not exist,
+but we always can define the \emph{left} and \emph{right} Busemann functions \cite[4.15]{schroeder-survey}:
 \[
 \bus_{\xi\downarrow}=\lim_{\zeta\searrow\xi} \bus_\zeta,
 \quad\text{and}\quad
@@ -76,9 +77,12 @@ The left and right Busemann \emph{error} for direction $\xi$ will be defined as
 \]
 The functions $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ are $\ZZ^2$-periodic;
 indeed, $\ZZ^2$-shift changes $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ by a constant and by the triangle inequality, both functions are bounded below.
-If $\ex_{\xi\downarrow}$ or $\ex_{\xi\uparrow}$ is constant, then it is identically zero;
-in this case $(\RR^2,\tilde g)$ is foliated by lines in the direction $\xi$.
 Again, if $\xi$ is irrational, then $\ex_{\xi\downarrow}=\ex_{\xi\uparrow}$, and this function can be denoted by $\ex_\xi$.
+
+
+
+\paragraph{Lines.}
+A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
 
 By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line (it also holds for Finsler metrics \cite[3.1]{schroeder-survey}).
 In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
@@ -91,21 +95,36 @@ in this case $\gamma$ is a minimizing geodesic.
 Given a direction $\xi\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[a,\infty)\to(\RR^2,\tilde g)$ with $\dir h=\xi$.
 Moreover, we can assume that $h$ is calibrated by
 $\bus_{\xi\uparrow}$ (or $\bus_{\xi\downarrow}$).
-Furthermore, we can find a line $\ell\colon\RR\to(\RR^2,\tilde g)$ with directions $-\xi$ and $\xi$ such that is calibrated by $\bus_{\xi\uparrow}$ (or $\bus_{\xi\downarrow}$).
+Furthermore, we can find a line $\ell\colon\RR\to(\RR^2,\tilde g)$ with directions $-\xi$ and $\xi$ such that is calibrated by $\bus_{\pm\xi\uparrow}$ (or $\bus_{\pm\xi\downarrow}$).
+
+The lines calibrated by $\bus_{\pm\xi\uparrow}$ are dijoint.
+Their union $L_{\pm\xi\uparrow}$ is the minimum set of $\ex_{\xi\uparrow}$.
+If $\ex_{\xi\uparrow}$ is constant, then it is identically zero and $L_{\pm\xi\uparrow}=\RR^2$.
+The same holds for lines calibrated by $\bus_{\pm\xi\downarrow}$
+
+\paragraph{Strips.}
+The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
 
 A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ sift;
 these lines project to periodic geodesics in the torus.
-If $\ell$ is periodic line for a shift in direction $\xi$ (which must be rational) then $\ell$ is calibrated by both Busemann functions $\bus_{\xi\uparrow}$ and $\bus_{\xi\downarrow}$.
+If $\ell$ is periodic line for a shift in direction $\xi$ (which must be rational) then $\ell$ is calibrated by both Busemann functions $\bus_{\pm\xi\uparrow}$ and $\bus_{\pm\xi\downarrow}$.
 
-Periodic lines with respect to shifts $(x,y)\mapsto (x+1,y)$ are called horizontal.
+Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that given the $\ZZ^2$ sift$\ZZ^2$ sift is $(x,y)\mapsto (x+1,y)$.
+In this case, periodic lines are called horizontal.
 These are disjont lines.
 Their union is a closed set, say $H$ and the complement $\RR^2\setminus H$ is a union of disjoint open strips between pairs of horizontal lines.
 
 Let $\Sigma$ be a strip between lower and upper horizontal lines $\ell$ and $u$, and let $\xi=(1,0)$.
-The Buseman functions $\bus_{\xi\downarrow}$ and $\bus_{\xi\uparrow}$ calibrate lines in $\Sigma$ with asymptotes on $\ell$ and $u$.
-Namely $\bus_{\xi\downarrow}$ calibrates lines that approach $\ell$ at $-\infty$ and $u$ and $+\infty$,
-and $\bus_{\xi\uparrow}$ calibrates lines that approach $u$ at $-\infty$ and $\ell$ and $+\infty$.
-If $\ex_{\xi\downarrow}$ or $\ex_{\xi\uparrow}$ is constant in $\Sigma$, then $\Sigma$ is foliated by corresponding lines.
+The restrictions of $\bus_{\pm\xi\downarrow}$ and $\bus_{\pm\xi\uparrow}$ can be defined within $\Sigma$.
+Up to an constants they are the following limits:
+\[\lim_{t\to\infty} (|\ell(\pm t)-p|_{\tilde g} -t)
+\quad\text{and}\quad
+\lim_{t\to\infty} (|u(\pm t)-p|_{\tilde g} -t).\]
+
+The Buseman functions $\bus_{\pm\xi\downarrow}$ and $\bus_{\pm\xi\uparrow}$ calibrate lines in $\Sigma$ with asymptotes on $\ell$ and $u$.
+These families will be called \emph{North-East} lines and \emph{South-East} lines.
+The union of North-East lines is the minimum set of $\ex_{\xi\downarrow}$.
+The union of South-East lines is the minimum set of $\ex_{\xi\uparrow}$.
 
 %???PIC
 
