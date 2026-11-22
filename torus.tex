@@ -55,7 +55,7 @@ Let $(\TT^2,g)$ be a Riemannian torus and $(\RR^2,\tilde g)$ its unveral Riemann
 so $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
 We will denote by $|p,q|_{\tilde g}$ the distance induced by $\tilde g$ between a pair of points $p,q\in \RR^2$.
 
-\paragraph{Ideal points.}
+\paragraph{Circle of ideal points.}
 Consider the space $C(\RR^2)$ of continuous functions on $\RR^2$ with the compact-open topology.
 Given a point $z\in \RR^2$, consider the function $f_z\colon \RR^2\to \RR$ defined by
 \[f_z(x)=|z,x|_{\tilde g}-|z,0|_{\tilde g}.\]
@@ -68,13 +68,16 @@ it will be written as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde
 Busemann functions shares many properties of distance functions,
 and they can be treated as a normalized distance function to an ideal point.
 
-\paragraph{Lines.}
+There is a unique cyclic order on the ideal points compatible with all strict cyclic orders of their gradients at common differentiability points.
+Namely, we say that ideal points $\xi_1$, $\xi_2$, and $\xi_3$ are in counterclockwise order if at some point $p$ their Busemann functions are differentiable and their gradients appear in the counterclockwise order on the unit circle in tangent plane at $p$.
+The ideal points can be distinguished using only the cyclic order.
+
+\paragraph{Lines and half-lines.}
 Let $\gamma$ be a 1-Lipschitz curve, and let $f$ be 1-Lipschitz function.
 If
 \[f\circ\gamma(t)\equiv\const-t,\]
 then we say that $\gamma$ is \emph{calibrated} by $f$;
 in this case $\gamma$ is a minimizing geodesic.
-
 
 A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
 
@@ -91,9 +94,6 @@ Similarly, a line with ideal points $\xi$ and $\zeta$ may not exist,
 but if it exist, any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
 
 Note that if two half-lines share two distinct points, then one extends the other.
-It leads to a cyclic order ideal points.
-We say that $\xi_1$, $\xi_2$, and $\xi_3$ are in counterclockwise order if at some point $p$ their Busemann functions are differentiable and their gradients appear in the counterclockwise order on the unit circle in tangent plane at $p$.
-The ideal points can be distinguished using only the cyclic order.
 
 \paragraph{Asymptotic directions.}
 By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line;
@@ -114,7 +114,6 @@ If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic 
 For an irrational direction $u$, this segment degenerates to a point;
 so $\bar u=\cev u=\vec{u}$.
 
-
 If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.
 The set of all such lines are disjoint;
 their union is the set of minimum of the sum
@@ -127,13 +126,19 @@ If $u$ is rational, then the same works for two sums:
 x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
 
 If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
-then $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$, respectively \cite[4.15]{schroeder-survey}.
+then $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$, respectively \cite[4.15]{schroeder-survey}.%
+\footnote{Assume $(\TT^2,g)$ is the standard torus of revolution and let $u$ is the asymptotic direction of the lift of shortest latitude.
+Then $\cev u\ne \vec u$ and every ideal point in the arc from $\cev u$ to $\vec u$ of the ideal circle have direction $u$.
+Similarly, for ${-}u$.
+For any direction $v\ne \pm u$, we have $\cev v=\vec v$.
+Keep this example in mind while reading further.}
 
 \paragraph{Strips.}
 The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
 
 A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ shift, say $\tau$.
-In this case we can assume that $\tau$ is simple; that is $\tau\colon (x,y)\mapsto (x+m,x+n)$ for relatively prime $m$ and $n$.
+In this case we can assume that $\tau$ is simple;
+that is, $\tau\colon (x,y)\mapsto (x+m,x+n)$ for relatively prime integers $m$ and $n$.
 
 The $\tau$-periodic lines are lifts of shortest geodesics in the torus in a given homotopy class.
 If $\ell$ is periodic line for a shift in direction $u$ (which must be rational) then $\ell$ is calibrated by the following four functions:
@@ -143,12 +148,13 @@ If $\ell$ is periodic line for a shift in direction $u$ (which must be rational)
 \quad\text{and}\quad
 x\mapsto -|{-}\vec u,x|_{\tilde g}.\]
 
-Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that $\tau\colon(x,y)\mapsto (x+1,y)$ or $\tau\colon(x,y)\mapsto (x,y+1)$.
+Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that $\tau\colon(x,y)\z\mapsto (x+1,y)$ or $\tau\colon(x,y)\mapsto (x,y+1)$.
 In these cases, periodic lines are called \emph{horizontal} or \emph{vertical}, respectively.
-These are disjoint lines.
-Their union is a closed set, say $H$ and the complement $\RR^2\setminus H$ is a union of disjoint interiors of horizontal strips between pairs of horizontal lines.
 
-Let $\Sigma$ be a horizontal strip between lower and upper horizontal lines $\ell$ and $m$.
+Distinct horizontal lines are disjoint.
+Their union is a closed set, say $H$, and the complement $\RR^2\setminus H$ is a union of disjoint interiors of horizontal strips between pairs of horizontal lines.
+
+Let $\Sigma$ be a horizontal strip with lower and upper horizontal lines $\ell$ and $m$.
 Denote their ideal points by $\lambda^\pm$ and $\mu^\pm$.
 The restrictions of these Busemann functions
 \[x\mapsto |\lambda^+,x|_{\tilde g},
@@ -162,7 +168,9 @@ to $\Sigma$ coincide up to a constant with
 \quad x\mapsto |\vec u,x|_{\tilde g},
 \quad\text{and}\quad
 x\mapsto |{-}\vec u,x|_{\tilde g},\]
-respectively.
+respectively.%
+\footnote{Any convex combination of $x\mapsto |\lambda^+,x|_{\tilde g}$ and $x\mapsto |\mu^+,x|_{\tilde g}$ is a Busemann function.
+Moreover, up to an additive constant they describe all restriction to $\Sigma$ of Busemann functions with asymptotic direction $u$.}
 
 The Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines $\Sigma$ from $\lambda^-$ and $\mu^+$,
 which will be called \emph{North-East lines}.
