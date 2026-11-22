@@ -1,4 +1,3 @@
-% Build with latexmk -pdf torus.tex. The figures are included in mppics.
 \documentclass[a4paper,10pt]{article}
 \usepackage{hyperref}
 \usepackage{paper-en}
@@ -40,91 +39,99 @@ Let $\tilde g$ is a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
 Then $(\RR^2, \tilde g)$ has no closed geodesics if and only if it admits a $\ZZ^2$-peridic geodesic foliation.
 \end{thm}
 
-The if part follows by the argument of Y. Colin de Verdière \cite[7.9]{gromov}:
+The if part follows by the argument of Y. Colin de Verdière \cite[7.9]{gromov}, it works for any geodesic foliation, not necessary $\ZZ^2$-peridic.
 
 \parit{Proof of the if part.}
+By Poincaré index theorem, a foliation of $\RR^2$ cannot have closed leaves.
+
 Any geodesic in $(\RR^2, \tilde g)$ either runs along the foliation and therefore cannot come back, or it crosses leaves of foliation transversely in one direction and therefore it cannot come back.
 \qeds
 
-The remaining part of the note deals with the only-if part.
-
 \section{Preliminaries}\label{sec:prelim}
 
+Let $(\TT^2,g)$ be a Riemannian torus and $(\RR^2,\tilde g)$ its unveral Riemannian covering;
+so $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
+We will denote by $|p,q|_{\tilde g}$ the distance induced by $\tilde g$.
 
-\paragraph{Busemann functions.}
-Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
-We will denote by $|p-q|_{\tilde g}$ the distance induced by $\tilde g$.
-Given a  unit vector $\xi\in\mathbb\SSS^1$, consider the \emph{Busemann function}
-\[\bus_\xi(p)=\lim_{t\to\infty} (|t\cdot \xi-p|_g-|t\cdot \xi-0|_g).\eqlbl{eq:def-busemann}\]
-If $\xi$ is irrational, then $\bus_\xi$ is a uniquely defined $1$-Lipschitz function.
-In this case any $\ZZ^2$-shift changes $\bus_\xi$ by a constant \cite[7.1(i)]{schroeder-survey}.
+\paragraph{Horocompactification.}
+Consider the space $C(\RR^2)$ of continuous functions $\RR^2\to \RR$ equipped with the compact-open topology.
+Given a point $z\in \RR^2$, consider the function $f_z\colon \RR^2\to \RR$ defined by
+\[f_z(x)=|z,x|_{\tilde g}-|z,0|_{\tilde g}.\]
+The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding with compact closure.
+The closure of $F(\RR^2)$ is called \emph{horocompactification} of $(\RR^2, \tilde g)$ \cite{gromov-hyperbolic}.
+The points added in the compactification will be called \emph{ideal points} of $(\RR^2, \tilde g)$.
 
-For a rational direction $\xi$ the limit in \ref{eq:def-busemann} might not exist,
-but we always can define the \emph{left} and \emph{right} Busemann functions \cite[4.15]{schroeder-survey}:
-\[
-\bus_{\xi\downarrow}=\lim_{\zeta\searrow\xi} \bus_\zeta,
-\quad\text{and}\quad
-\bus_{\xi\uparrow}=\lim_{\zeta\nearrow \xi} \bus_\zeta;
-\]
-here $\zeta$ is assumed to be irrational, and $\zeta\searrow \xi$ and $\zeta\nearrow \xi$ means that $\zeta$ approaches $\xi$ from left (respectively right) side.
-Thus $\bus_\xi=\bus_{\xi\downarrow}=\bus_{\xi\uparrow}$ for any irrational $\xi$.
+Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which called Busemann function of $\xi$;
+it will be written as $x\mapsto |\xi,x|_{\tilde g}$.
+Buseman functions sheres many properties of distance function they can be treated as a normalized distance function to an ideal point.
 
-The left and right Busemann \emph{error} for direction $\xi$ will be defined as
-\[
-\ex_{\xi\downarrow}=\bus_{\xi\downarrow}+\bus_{-\xi\downarrow},
-\quad\text{and}\quad
-\ex_{\xi\uparrow}=\bus_{\xi\uparrow}+\bus_{-\xi\uparrow}.
-\]
-The functions $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ are $\ZZ^2$-periodic;
-indeed, $\ZZ^2$-shift changes $\ex_{\xi\downarrow}$ and $\ex_{\xi\uparrow}$ by a constant and by the triangle inequality, both functions are bounded below.
-Again, if $\xi$ is irrational, then $\ex_{\xi\downarrow}=\ex_{\xi\uparrow}$, and this function can be denoted by $\ex_\xi$.
-
-
+The set of ideal points is homeomorpic to the circle.
 
 \paragraph{Lines.}
-A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
-
-By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line (it also holds for Finsler metrics \cite[3.1]{schroeder-survey}).
-In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
-For a line $\ell$ we have two asymptotic direction of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem.
-
-If $f\circ\gamma(t)=\pm t+\const$ for a 1-Lipschitz curve $\gamma$ and 1-Lipschitz function $f$,
+If $f\circ\gamma(t)=\const-t$ for a 1-Lipschitz curve $\gamma$ and 1-Lipschitz function $f$,
 then we say that $\gamma$ is \emph{calibrated} by $f$;
 in this case $\gamma$ is a minimizing geodesic.
 
-Given a direction $\xi\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[a,\infty)\to(\RR^2,\tilde g)$ with $\dir h=\xi$.
-Moreover, we can assume that $h$ is calibrated by
-$\bus_{\xi\uparrow}$ (or $\bus_{\xi\downarrow}$).
-Furthermore, we can find a line $\ell\colon\RR\to(\RR^2,\tilde g)$ with directions $-\xi$ and $\xi$ such that is calibrated by $\bus_{\pm\xi\uparrow}$ (or $\bus_{\pm\xi\downarrow}$).
 
-The lines calibrated by $\bus_{\pm\xi\uparrow}$ are dijoint.
-Their union $L_{\pm\xi\uparrow}$ is the minimum set of $\ex_{\xi\uparrow}$.
-If $\ex_{\xi\uparrow}$ is constant, then it is identically zero and $L_{\pm\xi\uparrow}=\RR^2$.
-The same holds for lines calibrated by $\bus_{\pm\xi\downarrow}$
+A \emph{line} and \emph{half-line} in a metric space are defined as isometric copy or $\RR$ and $[0,\infty)$, respectively.
+
+Every half-line $h\colon[0,\infty)\to (\RR^2,\tilde g)$ defines a unique Buseman function
+\[|\xi,x|_{\tilde g}=\lim_{t\to\infty}(|h(t),x|_{\tilde g}-|h(t),0|_{\tilde g}),\]
+which callibrates $h$; in this case we say that $\xi$ is the ideal point of the half-line~$h$.
+
+Converally, for every ideal point $\xi$ and a point $p$ there is a half-line $h$ that starts from $p$ and calibrated by the Buseman function $x\mapsto|\xi,x|_{\tilde g}$.
+Such a half-line may not be unique.
+Thus the ideal points can be defined as equivalence class of half-lines in $(\RR^2,\tilde g)$ calibrated by single Buseman function.
+
+\paragraph{Ideal directions}
+By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line (it also holds for Finsler metrics \cite[3.1]{schroeder-survey}).
+In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
+For a line $\ell$ we have two asymptotic direction of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
+
+Given a direction $u\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[0,\infty)\to(\RR^2,\tilde g)$ with $\dir h=u$ with an ideal point $\xi$.
+If $u$ is irratonal, then $\xi$ is uniquely defined; we will write $\xi=\bar u$.
+In this case any $\ZZ^2$-shift of $x$ changes $|\xi,x|$ by a constant \cite[8.7(i)]{schroeder-survey}.
+
+A rational direction $u\in \SSS^1$ may correspond to a nontrivial closed segment of ideal point, let us denote by
+$\cev u$ and $\vec{u}$ the left and right ends.
+If $\cev u=\vec u$, then $\TT^2$ is folliated by closed geodesic with asymptotic direction $u$.
+
+If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|-\bar u,x|$.
+The set of all such lines are disjoint;
+their union is the set of minimum of the sum
+\[x\mapsto |\bar u,x|+|{-}\bar u,x|.\]
+This function is $\ZZ^2$-periodic;
+indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the functions is bounded below.
+If $u$ is rational, then the same works for the sums
+\[x\mapsto |\cev u,x|+|{-}\cev u,x|
+\quad\text{and}\quad
+x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
+
+If $u_n$ is a sequence of irrational directions such that $\bar u_n\to \cev u+$ or $\bar u_n\to \vec u-$,
+then $|\bar u_n,x|\to|\cev u,x|$ or $|\bar u_n,x|\to|\vec u,x|$, respectively \cite[4.15]{schroeder-survey}.
+
+
 
 \paragraph{Strips.}
 The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
 
 A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ sift;
 these lines project to periodic geodesics in the torus.
-If $\ell$ is periodic line for a shift in direction $\xi$ (which must be rational) then $\ell$ is calibrated by both Busemann functions $\bus_{\pm\xi\uparrow}$ and $\bus_{\pm\xi\downarrow}$.
+If $\ell$ is periodic line for a shift in direction $u$ (which must be rational) then $\ell$ is calibrated by all four Busemann functions $x\mapsto \pm|\pm\cev u,x|$ and $x\mapsto \pm|\pm\vec u,x|$.
 
-Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that given the $\ZZ^2$ sift$\ZZ^2$ sift is $(x,y)\mapsto (x+1,y)$.
-In this case, periodic lines are called horizontal.
+Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that given the $\ZZ^2$-sift is $(x,y)\mapsto (x+1,y)$.
+In this case, periodic lines are called \emph{horizontal}.
 These are disjont lines.
-Their union is a closed set, say $H$ and the complement $\RR^2\setminus H$ is a union of disjoint open strips between pairs of horizontal lines.
+Their union is a closed set, say $H$ and the complement $\RR^2\setminus H$ is a union of disjoint introiors of   strips between pairs of horizontal lines.
 
-Let $\Sigma$ be a strip between lower and upper horizontal lines $\ell$ and $u$, and let $\xi=(1,0)$.
-The restrictions of $\bus_{\pm\xi\downarrow}$ and $\bus_{\pm\xi\uparrow}$ can be defined within $\Sigma$.
-Up to an constants they are the following limits:
-\[\lim_{t\to\infty} (|\ell(\pm t)-p|_{\tilde g} -t)
-\quad\text{and}\quad
-\lim_{t\to\infty} (|u(\pm t)-p|_{\tilde g} -t).\]
+Let $\Sigma$ be a strip between lower and upper horizontal lines $\ell$ and $m$, and let $\xi=(1,0)$.
+Denote their ideal points by $\lambda^\pm$ and $\mu^\pm$.
+The restrictions of their Buseman functions can be defined within $\Sigma$;
+up to a constant, these restrictions coinside with $x\mapsto \pm|\pm\cev u,x|$ and $x\mapsto \pm|\pm\vec u,x|$.
 
-The Buseman functions $\bus_{\pm\xi\downarrow}$ and $\bus_{\pm\xi\uparrow}$ calibrate lines in $\Sigma$ with asymptotes on $\ell$ and $u$.
-These families will be called \emph{North-East} lines and \emph{South-East} lines.
-The union of North-East lines is the minimum set of $\ex_{\xi\downarrow}$.
-The union of South-East lines is the minimum set of $\ex_{\xi\uparrow}$.
+The Buseman functions $x\mapsto |\cev u,x|$ and $x\mapsto -|{-}\cev u,x|$ calibrate that come in North-East direction in $\Sigma$ they have left asymptate at $\ell$ and right asymptotes on $m$.
+Similarly, $x\mapsto |\vec u,x|$ and $x\mapsto -|{-}\vec u,x|$ calibrate that come in Sout-East direction in $\Sigma$ they have left asymptate at $m$ and right asymptotes on $\ell$.
+
 
 %???PIC
 

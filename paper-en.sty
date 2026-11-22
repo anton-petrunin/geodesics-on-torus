@@ -3,6 +3,7 @@
 \usepackage{manfnt}
 \usepackage{enumerate}
 \usepackage{epsfig,lpic,wrapfig}
+\usepackage{graphicx}
 \usepackage{alphabeta}
 %\usepackage{fixltx2e}%provides \textsubscript
 \usepackage[shortlabels]{enumitem}
@@ -99,8 +100,11 @@ isbn=false]{biblatex}
   \hbox to\linewidth{\hfill\raisebox{-.15em}{\qedsymbol}}%
   \vskip.1\baselineskip
   \vskip\medskipamount}
-\renewcommand*\vec[1]{\text{\sc{#1}}}
 \def\emptyset{\varnothing}
+
+\newcommand{\cev}[1]{\mathord{\mathpalette\cevaux{#1}}}
+\newcommand{\cevaux}[2]{%
+  \rlap{\reflectbox{$#1\vec{\phantom{#2}}\mkern3mu$}}#2}
 
 
 %\usepackage{chngcntr}
