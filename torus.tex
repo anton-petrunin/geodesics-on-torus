@@ -65,7 +65,7 @@ The points added in the compactification will be called \emph{ideal points} of $
 
 Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which called Busemann function of $\xi$;
 it will be written as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde g}$, depending on the mood.
-Buseman functions shares many properties of distance functions,
+Busemann functions shares many properties of distance functions,
 and they can be treated as a normalized distance function to an ideal point.
 
 \paragraph{Lines.}
@@ -81,18 +81,18 @@ A \emph{line} and \emph{half-line} in a metric space are defined as isometric co
 Every half-line $h\colon[0,\infty)\to (\RR^2,\tilde g)$ defines a Busemann function
 \[|\xi,x|_{\tilde g}=\lim_{t\to\infty}(|h(t),x|_{\tilde g}-|h(t),0|_{\tilde g}),\]
 which calibrates $h$; in this case we say that $\xi$ is the ideal point of the half-line~$h$.
+We can denote its image by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$; the latter notation is used if we think of $h$ with the reversed parametrization.
 
-Conversantly, for every ideal point $\xi$ and a point $p$ there is a half-line $h$ that starts from $p$ and calibrated by the Buseman function $x\mapsto|\xi,x|_{\tilde g}$; we can denote its image by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$; the latter notation is used if we think of $h$ with the reversed parametrization.
-This half-line may not be unique.
+Conversantly, for every ideal point $\xi$ and a point $p$ there is a half-line $h$ that starts from $p$ and calibrated by the Busemann function $x\mapsto|\xi,x|_{\tilde g}$.
+The ideal point of $h$ might be different from $\xi$, but we still may denote this half-line by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$; so $[p,\xi)_{\tilde g}=[p,\zeta)_{\tilde g}$ does not imply $\xi=\zeta$.
+Also, this half-line is not uniquely defined by $\xi$.
 
 Similarly, a line with ideal points $\xi$ and $\zeta$ may not exist,
-but if it exist, any of them can be denoted by $(\xi,\zeta)$.
+but if it exist, any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
 
 Note that if two half-lines share two distinct points, then one extends the other.
-Therefore cyclic order of directions of half-lines at all points agree.
-More precisely, if the directions of $[p,\xi_1)_{\tilde g}$, $[p,\xi_2)_{\tilde g}$, and $[p,\xi_3)_{\tilde g}$ appear strictly counterclockwise on the circle of unit tangent vectors at $p$, then for any other point $q$ the directions of $[q,\xi_1)_{\tilde g}$, $[q,\xi_2)_{\tilde g}$, and $[q,\xi_3)_{\tilde g}$ cannot appear in a strictly clockwise order, but some of these directions might coincide.
-
-This defines a cyclic order on the ideal points of $(\RR^2, \tilde g)$.
+It leads to a cyclic order ideal points.
+We say that $\xi_1$, $\xi_2$, and $\xi_3$ are in counterclockwise order if at some point $p$ their Busemann functions are differentiable and their gradients appear in the counterclockwise order on the unit circle in tangent plane at $p$.
 The ideal points can be distinguished using only the cyclic order.
 
 \paragraph{Asymptotic directions.}
@@ -112,13 +112,7 @@ A rational direction $u\in \SSS^1$ may correspond to an interval of ideal points
 Let us denote by $\cev u$ and $\vec{u}$ the left and right ends.
 If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic direction $u$.
 For an irrational direction $u$, this segment degenerates to a point;
-so $\bar u=\cev u=\vec{u}$.%
-\footnote{Consider $(\TT^2,g)$ is the standard torus of revolution.
-Suppose $u$ is the asymptotic direction of the lift of shortest latitude.
-Then there are countably many ideal points that correspond to $\pm u$;
-Each lift of shortest latitude corresponds to one of the ideal points, and in addition we have their upper and lower limits $\cev u$ and $\vec u$.
-
-For any direction $v\ne \pm u$, we have $\cev v=\vec v$.}
+so $\bar u=\cev u=\vec{u}$.
 
 
 If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.
@@ -199,7 +193,8 @@ We say that $s$ \emph{turns across} $u\in\SSS^1$ if $v$, $-v$, $u$, and $w$ appe
 
 
 \begin{thm}{Key lemma}\label{lem:key}
-Suppose that the plane $\RR^2$ equipped with a $\ZZ^2$-periodic Riemannian metric $\tilde g$ does not admit a line foliation.
+Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
+Suppose that $(\RR^2,\tilde g)$ does not admit a $\ZZ^2$-periodic line foliation.
 Then for any direction $u$ there is a geodesic with minimizing tales that turns across $u$.
 
 \end{thm}
@@ -216,6 +211,7 @@ Rescaling $P$ up makes it possible to approximate all the arcs by integer transl
 This produce a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with all concave angles;
 here we apply that minimizing tales may cross only once.
 
+Thus the complement of interior of $Q$ is a a locally convex set in $(\RR^2,\tilde g)$.
 It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe that $\gamma$ is a closed geodesic in $(\RR^2,\tilde g)$.
 \qeds
 
@@ -263,50 +259,52 @@ solves the problem.
 
 \parbf{Proof of the key lemma.}
 
-\parit{Rational case.}
+\parit{Irrational case.}
 Suppose $u\in\SSS^1$ is an irrational asymptotic direction.
-Choose a periodic line $(\alpha,\omega)$ that separates $-u$ and $u$.
-Note that $(\alpha,\omega)$ crosses lines from ${-}\bar u$ to $\bar u$.
+Choose a periodic line $(\alpha,\omega)$ that separates $-u$ and $u$,
+so, $(\alpha,\omega)$ crosses all lines from ${-}\bar u$ to $\bar u$.
 
 Not all points on $(\alpha,\omega)$ lie on such lines, otherwise $(\RR^2,\tilde g)$ is foliated by lines in direction $u$.
 Thus we can choose a point $p\in (\alpha,\omega)$ that does not minimize the sum $x\mapsto |{-}\bar u,x|+|x,\bar u|$.
 
-Therefore some segment $I$ in $(\alpha,\omega)$ meets the condition of the observation for the function
+It follows that some segment $I$ in $(\alpha,\omega)$ meets the condition of the observation for the function
 \[f_1(x)=|{-}\bar u,x|+|x,\bar u|.\]
 If $v\approx -u$ and $w\approx u$, then $I$ meets the condition for the function
 \[f_2(x)=|\bar v,x|+|x,\bar w|,\]
 and the observations finishes the proof.
 
 
-\parit{Irrational case.}
-Now suppose $u$ is a rational direction.
-Applying an $\SL(2,\ZZ)$-matrix, we may assume that $u$ corresponds to the horizontal shift $\tau\colon(x,y)\mapsto (x+1,y)$;
-so $u=(1,0)$.
+\parit{Rational case.}
+Now suppose $u$ is a rational asymptotic direction.
+Applying an $\SL(2,\ZZ)$-matrix, we may assume that $u=(1,0)$;
+so it corresponds to the horizontal shift $\tau\colon(x,y)\mapsto (x+1,y)$.
 Choose a vertical periodic line $(\alpha,\omega)$.
 
-Let us use the observations about horizontal lines and strips at the end of~§~\ref{sec:prelim}.
+Further we use terminology from the end of~§~\ref{sec:prelim}.
 
-If each strip is foliated by North-East or South-East lines, then we get a geodesic foliation of $(\RR^2,\tilde g)$.
-Thus we can choose a horizontal strip, say $\Sigma$, that is not foliated by North-East and South-East lines.
+If each horizontal strip is foliated by North-East or South-East lines, then we get a $\ZZ^2$-periodic geodesic foliation of $(\RR^2,\tilde g)$.
+Indeed, choosing North-East foliation if possible and South-East foliation otherwise produces a $\ZZ^2$-periodic foliation.
+Thus we can choose a horizontal strip, say $\Sigma$, that is not foliated by North-East \textit{and} South-East lines.
 Let us keep the notations $\ell$, $m$, $\lambda^\pm$, and $\mu^\pm$ as in §~\ref{sec:prelim}.
 
-As we know, North-East strips and North-East lines in $\Sigma$ are dance on $\ell$ and $m$.
-Therefore, we can choose $I\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
-\[f_1(p)=|\lambda^-,p|_{\tilde g}+|p,\mu^+|_{\tilde g}.\]
+As we know, South-East strips and South-East lines in $\Sigma$ are dance on $\ell$ and $m$.
+Therefore, we can choose a closed interval $I\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
+\[f_1(p)=|\mu^-,p|_{\tilde g}+|p,\lambda^+|_{\tilde g}.\]
 Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g}+|p,\vec u|_{\tilde g}+c_1$ for some constant $c_1$.
 
-Repeating the argument in South-East direction, we we get a segment $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
+Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
 \[f_2(q)=|\mu^-,q|_{\tilde g}+|q,\lambda^+|_{\tilde g}.\]
-Again, on $\Sigma$ the function $f_2$ coincides with $|-\vec u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_2$ for some constant $c_2$.
+Again, $f_2$ coincides with $|{-}\vec u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
 
 Let us move $J$ far to the right from $I$, applying a huge horizontal shift $\tau^N$.
-Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle.
+Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle \cite[5.7]{bangert-gutkin}.
 Thus we can conclude that the pair $I$ and $J$ meet the condition in \ref{obs:join2} for the function
 \begin{align*}
 f_3(p,q)=|\mu^-,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.
-\intertext{In other words, the condition is met for}
-f_4(p,q)=|{-}\vec u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\cev u|_{\tilde g}.
-\intertext{Therefore they also meet the assumptions for a near by function}
+\intertext{Indeed,  $f_3(p,q)\approx f_1(p)+f_2(\tau^{-N}\cdot q)$ for some constant $c_3$ and very large $N$.
+In other words, the condition is met for}
+f_4(p,q)=|{-}\vec u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\cev u|_{\tilde g},
+\intertext{and therefore for a near by function}
 f_5(p,q)=|\bar v,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\bar w|_{\tilde g};
 \end{align*}
 here we assume that
