@@ -31,6 +31,10 @@ We show that a Riemannian two-torus has no contractible closed geodesics if and 
 A Riemannian 2-torus $(\TT^2,g)$ has no contractible closed geodesics if and only if it admits a geodesic foliation.
 \end{thm}
 
+The question was motivated by a remark in the book of Michael Gromov \cite[7.9]{gromov}.
+I was asking this question at least since 2016, slowly increasing level of certainty \cite{petrunin2022, petrunin2020};
+nearly the same problem for Finsler tori was posed Jan Philipp Schröder \cite[10.1]{schroeder-survey}; it is discussed at the final section.
+
 A contractible closed geodesic in $(\TT^2,g)$ lifts to a closed geodesic in the universal Riemannian covering $(\RR^2,\tilde g)$.
 Thus the theorem follows from the next slightly more general statent.
 
@@ -57,8 +61,7 @@ in particular, it separates the plane.
 Any geodesic in $(\RR^2, \tilde g)$ either runs along the foliation and therefore cannot come back, or it crosses leaves of foliation transversely in one direction and therefore it cannot come back.
 \qeds
 
-Our proof of part \ref{SHORT.thm:main+=>} is inspired by the argument of Eva Glasmachers and Gerhard Knieper, showing that existence of contractible geodesic loop on a Riemannian 2-torus implies the existence of closed geodesic \cite{glasmachers-knieper}.
-The Finsler case is discussed in the last section.
+Our proof of part \ref{SHORT.thm:main+=>} is inspired by the argument of Eva Glasmachers and Gerhard Knieper, showing that existence of contractible geodesic loop on a Riemannian 2-torus implies the existence of a simple closed geodesic \cite{glasmachers-knieper}.
 
 \section{Preliminaries}\label{sec:prelim}
 
@@ -154,10 +157,12 @@ For rational $u$, the following two sums are periodic
 Their minimum sets are described in the next paragraph.
 
 \paragraph{Strips.}
-A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some nonzero $\ZZ^2$-shift, say $\tau$.
-In this case we can assume that $\tau$ is simple; that is, $\tau\colon (x,y)\mapsto (x+m,y+n)$ for relatively prime integers $m$ and $n$.
-
+A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some nonzero $\ZZ^2$-shift, say $\tau\colon (x,y)\mapsto (x+m,y+n)$ for integers $m$ and $n$.
 The $\tau$-periodic lines are lifts of shortest geodesics in the torus in a given homotopy class \cite[6.6]{bangert}.
+
+If $m$ and $n$ are not relatively prime, then shortest geodesics in the corresponding homotopy class have self-intersection; therefore, they must repeat it self several times.
+Thus we can assume that $m$ and $n$ are relatively prime.
+
 If $\ell$ is periodic line for a shift in direction $u$ (which must be rational), then $\ell$ is calibrated by the following four functions:
 \[x\mapsto |\cev u,x|_{\tilde g},
 \quad x\mapsto -|{-}\cev u,x|_{\tilde g},
@@ -196,7 +201,7 @@ respectively.%
 \footnote{In fact any restriction to $\Sigma$ of Busemann functions with asymptotic direction $u$ can be written as minimum of
 two function $x\mapsto |\lambda^+,x|_{\tilde g}+c_1$ and $x\mapsto |\mu^+,x|_{\tilde g}+c_2$.}
 
-The Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines $\Sigma$ from $\lambda^-$ to $\mu^+$,
+In the interior of $\Sigma$, the Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines from $\lambda^-$ to $\mu^+$,
 which will be called \emph{North-East lines} \cite[6.7 and 6.8]{bangert}.
 The union of all North-East lines is the minimum set of the sum
 \[x\mapsto |{-}\vec u,x|_{\tilde g}+|x,\vec u|_{\tilde g}\]
@@ -225,7 +230,9 @@ Then for any direction $u$ there is a simple geodesic with minimizing tails that
 
 \end{thm}
 
-\parbf{Proof of the main theorem modulo the key lemma.}
+The idea in the following reduction is due to Jan Philipp  Schröder \cite[§~10.1 Fig.~9]{schroeder-survey}.
+
+\parbf{Proof of \ref{thm:main+<=} modulo the key lemma.}
 By the lemma, we can choose finite number of geodesic $s_1,\dots,s_n$ that turn across all directions.
 Since these geodesics have minimizing tails, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
 
@@ -243,7 +250,8 @@ This produce a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with all concave angle
 here we apply that minimizing tails can cross transversely at most once.
 
 Thus the complement of interior of $Q$ is a a locally convex set in $(\RR^2,\tilde g)$.
-It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe that $\gamma$ is a closed geodesic in $(\RR^2,\tilde g)$.
+It remains to choose a shortest curve $\gamma$ that surrounds $Q$.
+Note that $\gamma$ is a simple closed geodesic in $(\RR^2,\tilde g)$.
 \qeds
 
 \section{Gating geodesics}
@@ -284,7 +292,7 @@ at minimum of $f$ and observe that concatenation
 solves the problem.
 \qeds
 
-\parbf{Proof of the key lemma.}
+\parbf{Proof of \ref{lem:key}.}
 
 \parit{Irrational case.}
 Suppose $u\in\SSS^1$ is an irrational asymptotic direction.
@@ -365,7 +373,7 @@ in particular, it must have a self-intersection.
 \end{wrapfigure}
 
 It is possible to realize a figure-eight curve as closed geodesic on a universal cover of torus with parallel oriented geodesic meridians.
-Foliate the plane by parallel oriented lines; choose a smooth figure-eight curve that does not go in the direction of the foliation; modify the Euclidean metric in a neighborhood of the curve, making it geodesic; keeping the metric intact close to the direction of the foliation.
+Foliate the plane by parallel oriented lines; choose a smooth figure-eight curve that does not go in the direction of the foliation and goes straight at the crossing; modify the Euclidean metric in a neighborhood of the curve, making it geodesic; keeping the metric intact close to the direction of the foliation.
 This metric can be patched into a standard torus.
 
 \parbf{Acknowledgments.}

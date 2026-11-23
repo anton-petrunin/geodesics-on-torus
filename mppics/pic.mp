@@ -170,8 +170,10 @@ u:=1.4cm;
 
 z.o=origin;
 z.r=(1.4,0)*u;
+z.slope=(.6,.4)*u;
+z.sslope=z.slope xscaled -1;
 
-p8=z.o{(1,.7)}..z.r{(0,-1)}..z.o{(-1,.7)}..-z.r{(0,-1)}..cycle;
+p8=z.o..z.slope{z.slope}..z.r{(0,-1)}..{z.sslope}-z.sslope..z.o..{z.sslope}z.sslope..-z.r{(0,-1)}..-z.slope{z.slope}..cycle;
 
 p1=(0,-.7)*u--(0,.7)*u;
 
@@ -184,11 +186,11 @@ draw subpath (.9,1) of p1 shifted ((-1.2,0)*u) withcolor .5;
 drawarrow subpath (0,.9) of p1 shifted ((-.4,0)*u) withcolor .5;
 draw subpath (.9,1) of p1 shifted ((-.4,0)*u) withcolor .5;
 
-drawarrow subpath (0,.7) of p8;
-drawarrow subpath (.7,1.3) of p8;
+drawarrow subpath (0,1.3) of p8;
 drawarrow subpath (1.3,2.7) of p8;
-drawarrow subpath (2.7,3.3) of p8;
-draw subpath (3.3,4) of p8;
+drawarrow subpath (2.7,5.3) of p8;
+drawarrow subpath (5.3,6.7) of p8;
+draw subpath (6.7,8) of p8;
 
 endfig;
 
