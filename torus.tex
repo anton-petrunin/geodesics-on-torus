@@ -68,9 +68,9 @@ it will be written as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde
 Busemann functions shares many properties of distance functions,
 and they can be treated as a normalized distance function to an ideal point.
 
-There is a unique cyclic order on the ideal points compatible with all strict cyclic orders of their gradients at common differentiability points.
-Namely, we say that ideal points $\xi_1$, $\xi_2$, and $\xi_3$ are in counterclockwise order if at some point $p$ their Busemann functions are differentiable and their gradients appear in the counterclockwise order on the unit circle in tangent plane at $p$.
-The ideal points can be distinguished using only the cyclic order.
+The ideal points form a circle.
+Its cyclic order is uniquely determined by the following rule.
+Whenever three Busemann functions have distinct gradients at a common point of differentiability, these gradients occur in the same cyclic order as the corresponding ideal points.
 
 \paragraph{Lines and half-lines.}
 Let $\gamma$ be a 1-Lipschitz curve, and let $f$ be 1-Lipschitz function.
@@ -93,7 +93,7 @@ Also, this half-line is not uniquely defined by $\xi$.
 Similarly, a line with ideal points $\xi$ and $\zeta$ may not exist,
 but if it exist, any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
 
-Note that if two half-lines share two distinct points, then one extends the other.
+Note that if two half-lines share two distinct points, then they have a common arc between these points; so, if they have the same orientation, then one extends the other.
 
 \paragraph{Asymptotic directions.}
 By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line;
@@ -102,7 +102,13 @@ In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-
 
 For a line $\ell$ we have asymptotic directions of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
 
-Given a direction $u\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[0,\infty)\to(\RR^2,\tilde g)$ with $\dir h=u$;
+Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction;
+we call it the \emph{direction of $\xi$} \cite[4.18]{schroeder-survey}.
+If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
+then $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$, respectively \cite[4.15]{schroeder-survey}.
+(It is instructive to check that on the standard torus of revolution, the map from the ideal circle to the circle of directions collapses just two arcs, one for each orientation of the shortest parallel.)
+
+Given an asymptotic direction $u\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[0,\infty)\to(\RR^2,\tilde g)$ with $\dir h=u$;
 denote its ideal point by $\xi$.
 If $u$ is irrational, then $\xi$ is uniquely defined, and we will write $\xi=\bar u$.
 In this case any $\ZZ^2$-shift $\tau$ of $x$ changes $|\bar u,x|$ by a constant \cite[8.7(i)]{schroeder-survey};
@@ -125,13 +131,6 @@ If $u$ is rational, then the same works for two sums:
 \quad\text{and}\quad
 x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
 
-If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
-then $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$, respectively \cite[4.15]{schroeder-survey}.%
-\footnote{Assume $(\TT^2,g)$ is the standard torus of revolution and let $u$ is the asymptotic direction of the lift of shortest latitude.
-Then $\cev u\ne \vec u$ and every ideal point in the arc from $\cev u$ to $\vec u$ of the ideal circle have direction $u$.
-Similarly, for ${-}u$.
-For any direction $v\ne \pm u$, we have $\cev v=\vec v$.
-Keep this example in mind while reading further.}
 
 \paragraph{Strips.}
 The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
@@ -169,8 +168,8 @@ to $\Sigma$ coincide up to a constant with
 \quad\text{and}\quad
 x\mapsto |{-}\vec u,x|_{\tilde g},\]
 respectively.%
-\footnote{Any convex combination of $x\mapsto |\lambda^+,x|_{\tilde g}$ and $x\mapsto |\mu^+,x|_{\tilde g}$ is a Busemann function.
-Moreover, up to an additive constant they describe all restriction to $\Sigma$ of Busemann functions with asymptotic direction $u$.}
+\footnote{In fact any restriction to $\Sigma$ of Busemann functions with asymptotic direction $u$ can be written as minimum of
+two function $x\mapsto |\lambda^+,x|_{\tilde g}+c_1$ and $x\mapsto |\mu^+,x|_{\tilde g}+c_2$.}
 
 The Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines $\Sigma$ from $\lambda^-$ and $\mu^+$,
 which will be called \emph{North-East lines}.
@@ -217,7 +216,7 @@ Construct a polygon $P$ from translated arcs of $r_i$ so that all angles at the 
 So the only convex vertices of $P$ are the corners inside the translated arcs.
 Rescaling $P$ up makes it possible to approximate all the arcs by integer translations of arcs of $s_i$.
 This produce a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with all concave angles;
-here we apply that minimizing tales may cross only once.
+here we apply that minimizing tales can cross transversely at most once.
 
 Thus the complement of interior of $Q$ is a a locally convex set in $(\RR^2,\tilde g)$.
 It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe that $\gamma$ is a closed geodesic in $(\RR^2,\tilde g)$.
@@ -301,7 +300,7 @@ Therefore, we can choose a closed interval $I\subset (\alpha,\omega)$ arbitrary 
 Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g}+|p,\vec u|_{\tilde g}+c_1$ for some constant $c_1$.
 
 Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
-\[f_2(q)=|\mu^-,q|_{\tilde g}+|q,\lambda^+|_{\tilde g}.\]
+\[f_2(q)=|\lambda^-,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.\]
 Again, $f_2$ coincides with $|{-}\vec u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
 
 Let us move $J$ far to the right from $I$, applying a huge horizontal shift $\tau^N$.
