@@ -71,8 +71,12 @@ and they can be treated as a normalized distance function to an ideal point.
 The ideal points form a circle.
 Its cyclic order is uniquely determined by the following rule.
 Whenever three Busemann functions have distinct gradients at a common point of differentiability, these gradients occur in the same cyclic order as the corresponding ideal points.
-This follows from \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey},
-but finish this section before checking the proof.
+We give the picture first.
+In a proof, this description of the ideal circle would come last,
+after the discussion of asymptotic directions and strips
+(see \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey} for the ingredients).
+
+This follows from \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey}, but logically it should be stated latter finish this section before checking the proof.
 
 
 \paragraph{Lines and half-lines.}
@@ -94,8 +98,7 @@ For fixed $p$ and $\xi$, there may be several such half-lines.
 The ideal point of $h$ might be different from $\xi$, but we still may denote this half-line by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$;
 so $[p,\xi)_{\tilde g}=[p,\zeta)_{\tilde g}$ does \textit{not} imply $\xi=\zeta$.
 
-Similarly, a line calibrated by the Busemann functions $x\mapsto-|{-}\xi,x|_{\tilde g}$ and $x\mapsto|\zeta,x|_{\tilde g}$ may not exist,
-but if exist, then any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
+Similarly, we can write $(\xi,\zeta)_{\tilde g}$ for any oriented line calibrated by $x\mapsto-|\xi,x|_{\tilde g}$ and $x\mapsto|\zeta,x|_{\tilde g}$ (if it exists).
 The ideal points of $(\xi,\zeta)_{\tilde g}$ may or may not be $\xi$ and $\zeta$.
 
 Note that if two half-lines share two distinct points, then they have a common arc between these points; so, if they have the same orientation, then one extends the other.
@@ -103,13 +106,13 @@ Note that if two half-lines share two distinct points, then they have a common a
 \paragraph{Asymptotic directions.}
 By Hedlund's theorem \cite{hedlund,burago} half-lines in $(\RR^2,\tilde g)$ lie on a bounded distance from a Euclidean half-line;
 it also holds for (nonreversible) Finsler metrics \cite[3.1]{schroeder-survey}.
-In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
+In particular, we can define \emph{asymptotic direction} $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
 
-For a line $\ell$ we have asymptotic directions of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
+Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction \cite[3.9]{schroeder2017}; it will be called \emph{direction of $\xi$} and also denoted by $\dir\xi$.
+The map $\xi\mapsto \dir\xi$ is continuous \cite[3.10]{schroeder2017};
+moreover, it is monotone otherwise ideal point of some irrational directions would not be uniquely defined.
 
-Given an asymptotic direction $u\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[0,\infty)\to(\RR^2,\tilde g)$ with $\dir h=u$;
-denote its ideal point by $\xi$.
-If $u$ is irrational, then $\xi$ is uniquely defined \cite[8.7(i)]{schroeder-survey}, and we will write $\xi=\bar u$.
+If $u$ is irrational, then $u=\dir \xi$ for a unique ideal point \cite[8.7(i)]{schroeder-survey}, which can be written as $\xi=\bar u$.
 In this case any $\ZZ^2$-shift $\tau$ of $x$ changes $|\bar u,x|$ by a constant;
 that is, the difference $|\bar u,x|-|\bar u,\tau\cdot x|$ depends only on $\tau$ and $u$.
 
@@ -120,32 +123,30 @@ If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic 
 For an irrational direction $u$, this segment degenerates to a point;
 so $\bar u=\cev u=\vec{u}$.
 
-Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction \cite[3.9]{schroeder2017}, say $u$; we call $u$ the \emph{direction of $\xi$}.
-The map $\xi\mapsto u$ is continuous \cite[3.10]{schroeder2017}; moreover, it is monotone otherwise ideal point of some irrational directions wouldnot be uniquely defined.
-If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
-then $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$, respectively \cite[3.11]{schroeder2017}.
 (It is instructive to check that on the standard torus of revolution, the map from the ideal circle to the circle of directions collapses just two arcs, one for each orientation of the shortest parallel.)
+
+If $u_n$ is a sequence of irrational directions such that $u_n\z\to u+$ or $u_n\z\to  u-$,
+then $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$, respectively \cite[3.11]{schroeder2017}.
+
+
+For a line $\ell$ we have asymptotic directions of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
 
 If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.
 The set of all such lines are disjoint;
 their union is the set of minimum of the sum
 \[x\mapsto |\bar u,x|_{\tilde g}+|{-}\bar u,x|_{\tilde g}.\]
 At a minimum, the two calibrated half-lines fit together to form a line.
-This sum is $\ZZ^2$-periodic;
-indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the functions is bounded below.
+This sum is $\ZZ^2$-periodic; indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the functions is bounded below.
 
-Further, it will explained that if $u$ is rational, then the same works for two sums:
-\[x\mapsto |\cev u,x|_{\tilde g}+|{-}\cev u,x|_{\tilde g}
-\quad\text{and}\quad
-x\mapsto |\vec u,x|+|{-}\vec u,x|\]
-
+For rational $u$ rational the following two sums are periodic.
+\[x\mapsto |\cev u,x|_{\tilde g}+|{-}\cev u,x|_{\tilde g} \quad\text{and}\quad x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
+Their minimum sets are described in the next paragraph.
 
 \paragraph{Strips.}
 The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
 
 A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ shift, say $\tau$.
-In this case we can assume that $\tau$ is simple;
-that is, $\tau\colon (x,y)\mapsto (x+m,x+n)$ for relatively prime integers $m$ and $n$.
+In this case we can assume that $\tau$ is simple; that is, $\tau\colon (x,y)\mapsto (x+m,y+n)$ for relatively prime integers $m$ and $n$.
 
 The $\tau$-periodic lines are lifts of shortest geodesics in the torus in a given homotopy class.
 If $\ell$ is periodic line for a shift in direction $u$ (which must be rational) then $\ell$ is calibrated by the following four functions:
@@ -185,7 +186,7 @@ The union of all North-East lines in is the minimum set of the sum
 \[x\mapsto |{-}\vec u,x|_{\tilde g}+|x,\vec u|_{\tilde g}\]
 in $\Sigma$;
 equivalently, it is the minimum set of the sum
-\[x\mapsto |\lambda^- u,x|_{\tilde g}+|x,\mu+|_{\tilde g}.\]
+\[x\mapsto |\lambda^-,x|_{\tilde g}+|x,\mu^+|_{\tilde g}.\]
 If North-East lines do not foliate $\Sigma$, then the complement contain interior of North-East strip between North-East lines.
 Such a strip approaches $\ell$ and $m$.
 Since $\tau$ shifts it to another North-East strip, their union is dance at all points of $\ell$ and $m$.
@@ -252,7 +253,7 @@ for some $p\in I$ is strictly below both endpoint values of $I$.
 \begin{subthm}{obs:join2}\label{obs:main2}
 There are two closed segments $I\subset (\alpha,\omega)$ and $J$ on a $\ZZ^2$-shift of $(\alpha,\omega)$ to the side of $w$
 such that the function
-\[f\colon (p,q)\mapsto |\bar v-p|_{\tilde g}+|p-q|_{\tilde g}+|q-\bar w|_{\tilde g}\]
+\[f\colon (p,q)\mapsto |\bar v,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\bar w|_{\tilde g}\]
 for some pair $(p,q)\in I\times J$
 is strictly below its boundary values of $I\times J$.
 \end{subthm}
@@ -309,7 +310,7 @@ Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g
 
 Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
 \[f_2(q)=|\lambda^-,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.\]
-Again, $f_2$ coincides with $|{-}\vec u,p|_{\tilde g}+|p,\vec u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
+Again, $f_2$ coincides with $|{-}\vec u,q|_{\tilde g}+|q,\vec u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
 
 Let us move $J$ far to the right from $I$, applying a huge horizontal shift $\tau^N$.
 Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle \cite[5.7]{bangert-gutkin}.
@@ -329,8 +330,12 @@ $w$ close to $u$ and lying on its left side.
 Again the observation finishes the proof.
 \qeds
 
+\section{Remarks}
 
-
+The proof of Theorem~\ref{thm:main} applies to smooth reversible strictly convex Finsler metrics.
+In the nonreversible case, foliation by oriented minimizing lines can coexist with a closed geodesic in the covering plane,
+but it must have turning number zero, as for example figure eight.
+This is related to the problem posed by Jan Philipp Schröder \cite[10.1]{schroeder-survey}.
 
 \parbf{Acknowledgments.}
 The proof was found in collaboration with AI (GPT-6.2 Astra).
