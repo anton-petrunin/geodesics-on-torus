@@ -59,11 +59,11 @@ We will denote by $|p,q|_{\tilde g}$ the distance induced by $\tilde g$ between 
 Consider the space $C(\RR^2)$ of continuous functions on $\RR^2$ with the compact-open topology.
 Given a point $z\in \RR^2$, consider the function $f_z\colon \RR^2\to \RR$ defined by
 \[f_z(x)=|z,x|_{\tilde g}-|z,0|_{\tilde g}.\]
-The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding with compact closure \cite{gromov-hyperbolic};
+The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding with compact closure \cite[II, § 1]{ballmann};
 the closure of $F(\RR^2)$ is called \emph{horocompactification} of $(\RR^2, \tilde g)$.
 The points added in the compactification will be called \emph{ideal points} of $(\RR^2, \tilde g)$.
 
-Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which called Busemann function of $\xi$;
+Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which called \emph{Busemann function} of $\xi$;
 it will be written as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde g}$, depending on the mood.
 Busemann functions shares many properties of distance functions,
 and they can be treated as a normalized distance function to an ideal point.
@@ -71,6 +71,9 @@ and they can be treated as a normalized distance function to an ideal point.
 The ideal points form a circle.
 Its cyclic order is uniquely determined by the following rule.
 Whenever three Busemann functions have distinct gradients at a common point of differentiability, these gradients occur in the same cyclic order as the corresponding ideal points.
+This follows from \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey},
+but finish this section before checking the proof.
+
 
 \paragraph{Lines and half-lines.}
 Let $\gamma$ be a 1-Lipschitz curve, and let $f$ be 1-Lipschitz function.
@@ -83,15 +86,17 @@ A \emph{line} and \emph{half-line} in a metric space are defined as isometric co
 
 Every half-line $h\colon[0,\infty)\to (\RR^2,\tilde g)$ defines a Busemann function
 \[|\xi,x|_{\tilde g}=\lim_{t\to\infty}(|h(t),x|_{\tilde g}-|h(t),0|_{\tilde g}),\]
-which calibrates $h$; in this case we say that $\xi$ is the ideal point of the half-line~$h$.
+which calibrates $h$ \cite[§ 22]{busemann}; in this case we say that $\xi$ is the ideal point of the half-line~$h$.
 We can denote its image by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$; the latter notation is used if we think of $h$ with the reversed parametrization.
 
 Conversantly, for every ideal point $\xi$ and a point $p$ there is a half-line $h$ that starts from $p$ and calibrated by the Busemann function $x\mapsto|\xi,x|_{\tilde g}$.
-The ideal point of $h$ might be different from $\xi$, but we still may denote this half-line by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$; so $[p,\xi)_{\tilde g}=[p,\zeta)_{\tilde g}$ does not imply $\xi=\zeta$.
-Also, this half-line is not uniquely defined by $\xi$.
+For fixed $p$ and $\xi$, there may be several such half-lines.
+The ideal point of $h$ might be different from $\xi$, but we still may denote this half-line by $[p,\xi)_{\tilde g}$ or $(\xi,p]_{\tilde g}$;
+so $[p,\xi)_{\tilde g}=[p,\zeta)_{\tilde g}$ does \textit{not} imply $\xi=\zeta$.
 
-Similarly, a line with ideal points $\xi$ and $\zeta$ may not exist,
-but if it exist, any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
+Similarly, a line calibrated by the Busemann functions $x\mapsto-|{-}\xi,x|_{\tilde g}$ and $x\mapsto|\zeta,x|_{\tilde g}$ may not exist,
+but if exist, then any of them can be denoted by $(\xi,\zeta)_{\tilde g}$.
+The ideal points of $(\xi,\zeta)_{\tilde g}$ may or may not be $\xi$ and $\zeta$.
 
 Note that if two half-lines share two distinct points, then they have a common arc between these points; so, if they have the same orientation, then one extends the other.
 
@@ -102,34 +107,37 @@ In particular, we can define asymptotic direction $\dir h\in\SSS^1$ of any half-
 
 For a line $\ell$ we have asymptotic directions of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
 
-Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction;
-we call it the \emph{direction of $\xi$} \cite[4.18]{schroeder-survey}.
-If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
-then $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$, respectively \cite[4.15]{schroeder-survey}.
-(It is instructive to check that on the standard torus of revolution, the map from the ideal circle to the circle of directions collapses just two arcs, one for each orientation of the shortest parallel.)
-
 Given an asymptotic direction $u\in \SSS^1$ and a point $p\in\RR^2$ we can find a half-line $h\colon[0,\infty)\to(\RR^2,\tilde g)$ with $\dir h=u$;
 denote its ideal point by $\xi$.
-If $u$ is irrational, then $\xi$ is uniquely defined, and we will write $\xi=\bar u$.
-In this case any $\ZZ^2$-shift $\tau$ of $x$ changes $|\bar u,x|$ by a constant \cite[8.7(i)]{schroeder-survey};
+If $u$ is irrational, then $\xi$ is uniquely defined \cite[8.7(i)]{schroeder-survey}, and we will write $\xi=\bar u$.
+In this case any $\ZZ^2$-shift $\tau$ of $x$ changes $|\bar u,x|$ by a constant;
 that is, the difference $|\bar u,x|-|\bar u,\tau\cdot x|$ depends only on $\tau$ and $u$.
 
-A rational direction $u\in \SSS^1$ may correspond to an interval of ideal points with resect to its cyclic order.
+A rational direction $u\in \SSS^1$ may correspond to an interval in the ideal circle;
+this is inverse image of $u$ under projection from the ideal circle.
 Let us denote by $\cev u$ and $\vec{u}$ the left and right ends.
-If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic direction $u$.
+If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic direction $u$ \cite[8.7(ii)]{schroeder-survey}.
 For an irrational direction $u$, this segment degenerates to a point;
 so $\bar u=\cev u=\vec{u}$.
+
+Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction \cite[3.9]{schroeder2017}, say $u$; we call $u$ the \emph{direction of $\xi$}.
+The map $\xi\mapsto u$ is continuous \cite[3.10]{schroeder2017}; moreover, it is monotone otherwise ideal point of some irrational directions wouldnot be uniquely defined.
+If $u_n$ is a sequence of irrational directions such that $u_n\to u+$ or $u_n\to  u-$,
+then $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$, respectively \cite[3.11]{schroeder2017}.
+(It is instructive to check that on the standard torus of revolution, the map from the ideal circle to the circle of directions collapses just two arcs, one for each orientation of the shortest parallel.)
 
 If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.
 The set of all such lines are disjoint;
 their union is the set of minimum of the sum
 \[x\mapsto |\bar u,x|_{\tilde g}+|{-}\bar u,x|_{\tilde g}.\]
+At a minimum, the two calibrated half-lines fit together to form a line.
 This sum is $\ZZ^2$-periodic;
 indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the functions is bounded below.
-If $u$ is rational, then the same works for two sums:
+
+Further, it will explained that if $u$ is rational, then the same works for two sums:
 \[x\mapsto |\cev u,x|_{\tilde g}+|{-}\cev u,x|_{\tilde g}
 \quad\text{and}\quad
-x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
+x\mapsto |\vec u,x|+|{-}\vec u,x|\]
 
 
 \paragraph{Strips.}
@@ -308,7 +316,7 @@ Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approac
 Thus we can conclude that the pair $I$ and $J$ meet the condition in \ref{obs:join2} for the function
 \begin{align*}
 f_3(p,q)=|\mu^-,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.
-\intertext{Indeed,  $f_3(p,q)\approx f_1(p)+f_2(\tau^{-N}\cdot q)$ for some constant $c_3$ and very large $N$.
+\intertext{Indeed,  $f_3(p,q)\approx f_1(p)+f_2(\tau^{-N}\cdot q)+c_3$ for some constant $c_3$ and very large $N$.
 In other words, the condition is met for}
 f_4(p,q)=|{-}\cev u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\vec u|_{\tilde g},
 \intertext{and therefore for a near by function}
