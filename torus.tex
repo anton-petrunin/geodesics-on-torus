@@ -194,21 +194,21 @@ The same holds in the South-East direction.
 
 %???PIC
 
-Let $s$ be a geodesic in $(\RR^2,\tilde g)$ with minimizing tales;
-that is, both tales of $s$ are half-lines, so the asymptotic directions $v=\dir^-s$ and $w=\dir^+s$ are defined.
+Let $s$ be a geodesic in $(\RR^2,\tilde g)$ with minimizing tails;
+that is, both tails of $s$ are half-lines, so the asymptotic directions $v=\dir^-s$ and $w=\dir^+s$ are defined.
 We say that $s$ \emph{turns across} $u\in\SSS^1$ if $v$, $-v$, $u$, and $w$ appear in the same counterclockwise  cyclic order on $\SSS^1$.
 
 
 \begin{thm}{Key lemma}\label{lem:key}
 Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
 Suppose that $(\RR^2,\tilde g)$ does not admit a $\ZZ^2$-periodic line foliation.
-Then for any direction $u$ there is a geodesic with minimizing tales that turns across $u$.
+Then for any direction $u$ there is a simple geodesic with minimizing tails that turns across $u$.
 
 \end{thm}
 
 \parbf{Proof of the main theorem modulo the key lemma.}
 By the lemma, we can choose finite number of geodesic $s_1,\dots,s_n$ that turn across all directions.
-Since these geodesics have minimizing tales, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
+Since these geodesics have minimizing tails, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
 
 %???PIC
 
@@ -216,7 +216,7 @@ Construct a polygon $P$ from translated arcs of $r_i$ so that all angles at the 
 So the only convex vertices of $P$ are the corners inside the translated arcs.
 Rescaling $P$ up makes it possible to approximate all the arcs by integer translations of arcs of $s_i$.
 This produce a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with all concave angles;
-here we apply that minimizing tales can cross transversely at most once.
+here we apply that minimizing tails can cross transversely at most once.
 
 Thus the complement of interior of $Q$ is a a locally convex set in $(\RR^2,\tilde g)$.
 It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe that $\gamma$ is a closed geodesic in $(\RR^2,\tilde g)$.
@@ -226,12 +226,12 @@ It remains to choose a shortest curve $\gamma$ that surrounds $Q$ and observe th
 
 The following observation provides a tool for constructing geodesic in the key lemma.
 It has long formulation, but short prove.
-Intuitively speaking, we scratch curves that pass a gate or two; if the obtained curve does not touch gate sides, then we get a geodesic.
+Intuitively speaking, we pull curves taut that pass a gate or two; if the obtained curve does not touch gate sides, then we get a geodesic.
 
 \begin{thm}{Observation}\label{obs:join}
 Let $\tilde g$ be $\ZZ^2$-periodic Riemannian metric on $\RR^2$,
 and let $(\alpha,\omega)$ be a periodic line in $(\RR^2,\tilde g)$ that separates two irrational asymptotic directions $v$ and $w$.
-If one of the following condition holds, then there is a geodesic $s$ in $(\RR^2,\tilde g)$ with minimizing tales and the asymptotic directions $v$ and $w$.
+If one of the following condition holds, then there is a geodesic $s$ in $(\RR^2,\tilde g)$ with minimizing tails and the asymptotic directions $v$ and $w$.
 
 \begin{subthm}{obs:join1}
 There is a closed segment $I\subset (\alpha,\omega)$ such that the minimum of function
@@ -256,7 +256,7 @@ is strictly below its boundary values of $I\times J$.
 \parbf{Proof.}
 For \ref{SHORT.obs:join1}, choose a point $p\in I$ that attends minimum of $f$ and observe that concatenation
 \[(\bar v,p]_{\tilde g}\cup[p,\bar w)_{\tilde g}\]
-solves the problem.
+solves the problem; if there were a corner at $p$, then moving $p$ a bit decreases $f$.
 
 For \ref{SHORT.obs:join2}, choose a pair $(p,q)\in I\times J$
 at minimum of $f$ and observe that concatenation
@@ -291,17 +291,17 @@ Further we use terminology from the end of~§~\ref{sec:prelim}.
 
 If each horizontal strip is foliated by North-East or South-East lines, then we get a $\ZZ^2$-periodic geodesic foliation of $(\RR^2,\tilde g)$.
 Indeed, choosing North-East foliation if possible and South-East foliation otherwise produces a $\ZZ^2$-periodic foliation.
-Thus we can choose a horizontal strip, say $\Sigma$, that is not foliated by North-East \textit{and} South-East lines.
+Thus we can choose a horizontal strip, say $\Sigma$, that neither family foliates.
 Let us keep the notations $\ell$, $m$, $\lambda^\pm$, and $\mu^\pm$ as in §~\ref{sec:prelim}.
 
-As we know, South-East strips and South-East lines in $\Sigma$ are dance on $\ell$ and $m$.
+As we know, South-East strips and South-East lines in $\Sigma$ are accumulate on $\ell$ and $m$.
 Therefore, we can choose a closed interval $I\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
 \[f_1(p)=|\mu^-,p|_{\tilde g}+|p,\lambda^+|_{\tilde g}.\]
-Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g}+|p,\vec u|_{\tilde g}+c_1$ for some constant $c_1$.
+Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_1$ for some constant $c_1$.
 
 Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
 \[f_2(q)=|\lambda^-,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.\]
-Again, $f_2$ coincides with $|{-}\vec u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
+Again, $f_2$ coincides with $|{-}\vec u,p|_{\tilde g}+|p,\vec u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
 
 Let us move $J$ far to the right from $I$, applying a huge horizontal shift $\tau^N$.
 Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle \cite[5.7]{bangert-gutkin}.
@@ -310,7 +310,7 @@ Thus we can conclude that the pair $I$ and $J$ meet the condition in \ref{obs:jo
 f_3(p,q)=|\mu^-,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.
 \intertext{Indeed,  $f_3(p,q)\approx f_1(p)+f_2(\tau^{-N}\cdot q)$ for some constant $c_3$ and very large $N$.
 In other words, the condition is met for}
-f_4(p,q)=|{-}\vec u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\cev u|_{\tilde g},
+f_4(p,q)=|{-}\cev u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\vec u|_{\tilde g},
 \intertext{and therefore for a near by function}
 f_5(p,q)=|\bar v,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\bar w|_{\tilde g};
 \end{align*}
