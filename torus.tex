@@ -32,16 +32,24 @@ A Riemannian 2-torus $(\TT^2,g)$ has no contractible closed geodesics if and onl
 \end{thm}
 
 A contractible closed geodesic in $(\TT^2,g)$ lifts to a closed geodesic in the universal Riemannian covering $(\RR^2,\tilde g)$.
-Thus the theorem is equivalent to the following statement that we will actually prove.
+Thus the theorem follows from the next slightly more general statent.
 
-\begin{thm}{Reformulation}
+\begin{thm}{Reformulation}\label{thm:main+}
 Let $\tilde g$ is a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
-Then $(\RR^2, \tilde g)$ has no closed geodesics if and only if it admits a $\ZZ^2$-periodic geodesic foliation.
+
+\begin{subthm}{thm:main+=>}
+ If $(\RR^2, \tilde g)$ has no simple closed geodesics, then it admits a $\ZZ^2$-periodic geodesic foliation with globally minimizing leaves.
+\end{subthm}
+
+\begin{subthm}{thm:main+<=}
+If $(\RR^2, \tilde g)$ has admits a geodesic foliation, then it has no closed geodesics.
+\end{subthm}
+
 \end{thm}
 
-The if part follows by the argument of Y. Colin de Verdière \cite[7.9]{gromov}, it works for any geodesic foliation, not necessary $\ZZ^2$-peridic.
+Part \ref{SHORT.thm:main+<=} follows by the argument of Y. Colin de Verdière \cite[7.9]{gromov}.
 
-\parit{Proof of the if part.}
+\parit{Proof of \ref{SHORT.thm:main+<=}.}
 By Poincaré index theorem, a foliation of $\RR^2$ cannot have closed leaves.
 Furthermore, by Poincaré--Bendixson theorem, each leaf is a properly embedded copy of $\RR$;
 in particular, it separates the plane.
@@ -49,7 +57,13 @@ in particular, it separates the plane.
 Any geodesic in $(\RR^2, \tilde g)$ either runs along the foliation and therefore cannot come back, or it crosses leaves of foliation transversely in one direction and therefore it cannot come back.
 \qeds
 
+Our proof of part \ref{SHORT.thm:main+=>} is inspired by the argument of Eva Glasmachers and Gerhard Knieper, showing that existence of contractible geodesic loop on a Riemannian 2-torus implies the existence of closed geodesic \cite{glasmachers-knieper}.
+The Finsler case is discussed in the last section.
+
 \section{Preliminaries}\label{sec:prelim}
+
+In this section we survey nessesary results and fix notations.
+Few pages in the lectures of Hung Vinh Tran and Yifeng Yu \cite[§ 6.4.1]{tran-yu} should give a good start.
 
 Let $(\TT^2,g)$ be a Riemannian torus and $(\RR^2,\tilde g)$ its unveral Riemannian covering;
 so $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
@@ -59,7 +73,7 @@ We will denote by $|p,q|_{\tilde g}$ the distance induced by $\tilde g$ between 
 Consider the space $C(\RR^2)$ of continuous functions on $\RR^2$ with the compact-open topology.
 Given a point $z\in \RR^2$, consider the function $f_z\colon \RR^2\to \RR$ defined by
 \[f_z(x)=|z,x|_{\tilde g}-|z,0|_{\tilde g}.\]
-The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding with compact closure \cite[II, § 1]{ballmann};
+The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding with compact closure \cite[II § 1]{ballmann};
 the closure of $F(\RR^2)$ is called \emph{horocompactification} of $(\RR^2, \tilde g)$.
 The points added in the compactification will be called \emph{ideal points} of $(\RR^2, \tilde g)$.
 
@@ -68,15 +82,12 @@ it will be written as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde
 Busemann functions shares many properties of distance functions,
 and they can be treated as a normalized distance function to an ideal point.
 
-The ideal points form a circle.
+The ideal points form a circle, which we denote by $\S_{\tilde g}$.
 Its cyclic order is uniquely determined by the following rule.
 Whenever three Busemann functions have distinct gradients at a common point of differentiability, these gradients occur in the same cyclic order as the corresponding ideal points.
-We give the picture first.
 In a proof, this description of the ideal circle would come last,
 after the discussion of asymptotic directions and strips
 (see \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey} for the ingredients).
-
-This follows from \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey}, but logically it should be stated latter finish this section before checking the proof.
 
 
 \paragraph{Lines and half-lines.}
@@ -99,7 +110,7 @@ The ideal point of $h$ might be different from $\xi$, but we still may denote th
 so $[p,\xi)_{\tilde g}=[p,\zeta)_{\tilde g}$ does \textit{not} imply $\xi=\zeta$.
 
 Similarly, we can write $(\xi,\zeta)_{\tilde g}$ for any oriented line calibrated by $x\mapsto-|\xi,x|_{\tilde g}$ and $x\mapsto|\zeta,x|_{\tilde g}$ (if it exists).
-The ideal points of $(\xi,\zeta)_{\tilde g}$ may or may not be $\xi$ and $\zeta$.
+Again, the ideal points of $(\xi,\zeta)_{\tilde g}$ may or may not be $\xi$ and $\zeta$.
 
 Note that if two half-lines share two distinct points, then they have a common arc between these points; so, if they have the same orientation, then one extends the other.
 
@@ -109,47 +120,45 @@ it also holds for (nonreversible) Finsler metrics \cite[3.1]{schroeder-survey}.
 In particular, we can define \emph{asymptotic direction} $\dir h\in\SSS^1$ of any half-line $h$ in $(\RR^2,\tilde g)$.
 
 Given an ideal point $\xi$, all half-lines calibrated by $x\mapsto |\xi,x|_{\tilde g}$ have the same asymptotic direction \cite[3.9]{schroeder2017}; it will be called \emph{direction of $\xi$} and also denoted by $\dir\xi$.
-The map $\xi\mapsto \dir\xi$ is continuous \cite[3.10]{schroeder2017};
-moreover, it is monotone otherwise ideal point of some irrational directions would not be uniquely defined.
+The map $\dir\colon\S_{\tilde g}\to \SSS^1$ is surjective and continuous \cite[3.10]{schroeder2017}.
 
 If $u$ is irrational, then $u=\dir \xi$ for a unique ideal point \cite[8.7(i)]{schroeder-survey}, which can be written as $\xi=\bar u$.
+It follows that the map $\xi\mapsto \dir\xi$ monotone; otherwise ideal point of some irrational directions would not be uniquely defined.
 In this case any $\ZZ^2$-shift $\tau$ of $x$ changes $|\bar u,x|$ by a constant;
 that is, the difference $|\bar u,x|-|\bar u,\tau\cdot x|$ depends only on $\tau$ and $u$.
 
-A rational direction $u\in \SSS^1$ may correspond to an interval in the ideal circle;
-this is inverse image of $u$ under projection from the ideal circle.
+
+A rational direction $u\in \SSS^1$ the fiber $\dir^{-1}\{u\}$ is a closed arc of $\S_{\tilde g}$, possibly a point.
 Let us denote by $\cev u$ and $\vec{u}$ the left and right ends.
 If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesic with asymptotic direction $u$ \cite[8.7(ii)]{schroeder-survey}.
 For an irrational direction $u$, this segment degenerates to a point;
 so $\bar u=\cev u=\vec{u}$.
 
-(It is instructive to check that on the standard torus of revolution, the map from the ideal circle to the circle of directions collapses just two arcs, one for each orientation of the shortest parallel.)
+(If $(\TT^2,g)$ is the standard torus of revolution, then $\dir\colon\S_{\tilde g}\to \SSS^1$ collapses just two arcs, one for each orientation of the shortest parallel.)
 
-If $u_n$ is a sequence of irrational directions such that $u_n\z\to u+$ or $u_n\z\to  u-$,
-then $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$, respectively \cite[3.11]{schroeder2017}.
+If $u_n$ is a sequence of irrational directions such that $u_n\z\to u+$ or $u_n\z\to  u-$, then $|\bar u_n,x|_{\tilde g}\to|\vec u,x|_{\tilde g}$ or $|\bar u_n,x|_{\tilde g}\to|\cev u,x|_{\tilde g}$, respectively \cite[3.11]{schroeder2017}.
 
 
-For a line $\ell$ we have asymptotic directions of entrance and exit $\dir^-\ell$ and $\dir^+\ell$, which are opposite by Hedlund's theorem, so $\dir^-\ell=-\dir^+\ell$.
+For a line $\ell$ we have asymptotic directions of entrance and exit, which are opposite by Hedlund's theorem.
 
-If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.
-The set of all such lines are disjoint;
-their union is the set of minimum of the sum
+If line $\ell$ has irrational direction $u$, then it is calibrated by $x\mapsto |\bar u,x|$ and $x\mapsto -|{-}\bar u,x|$.%
+\footnote{Here ${-}\bar u=\overline{-u}$; similarly, ${-}\vec u=\overrightarrow{-u}$ and ${-}\cev u=\overleftarrow{-u}$ further.}
+Distinct lines of this direction are disjoint.
+Their union is the minimum set of the sum
 \[x\mapsto |\bar u,x|_{\tilde g}+|{-}\bar u,x|_{\tilde g}.\]
 At a minimum, the two calibrated half-lines fit together to form a line.
-This sum is $\ZZ^2$-periodic; indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the functions is bounded below.
+This sum is $\ZZ^2$-periodic; indeed, $\ZZ^2$-shift changes the sum by a constant and by the triangle inequality, the sum is bounded below.
 
-For rational $u$ rational the following two sums are periodic.
+For rational $u$, the following two sums are periodic
 \[x\mapsto |\cev u,x|_{\tilde g}+|{-}\cev u,x|_{\tilde g} \quad\text{and}\quad x\mapsto |\vec u,x|+|{-}\vec u,x|.\]
 Their minimum sets are described in the next paragraph.
 
 \paragraph{Strips.}
-The following statements are covered in \cite[§ 4--5]{bangert-gutkin}.
-
-A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some $\ZZ^2$ shift, say $\tau$.
+A line in $(\RR^2,\tilde g)$ will be called \emph{periodic} if it is invariant with respect to some nonzero $\ZZ^2$-shift, say $\tau$.
 In this case we can assume that $\tau$ is simple; that is, $\tau\colon (x,y)\mapsto (x+m,y+n)$ for relatively prime integers $m$ and $n$.
 
-The $\tau$-periodic lines are lifts of shortest geodesics in the torus in a given homotopy class.
-If $\ell$ is periodic line for a shift in direction $u$ (which must be rational) then $\ell$ is calibrated by the following four functions:
+The $\tau$-periodic lines are lifts of shortest geodesics in the torus in a given homotopy class \cite[6.6]{bangert}.
+If $\ell$ is periodic line for a shift in direction $u$ (which must be rational), then $\ell$ is calibrated by the following four functions:
 \[x\mapsto |\cev u,x|_{\tilde g},
 \quad x\mapsto -|{-}\cev u,x|_{\tilde g},
 \quad x\mapsto |\vec u,x|_{\tilde g},
@@ -160,7 +169,14 @@ Applying an $\SL(2,\ZZ)$-matrix to the plane, we may assume that $\tau\colon(x,y
 In these cases, periodic lines are called \emph{horizontal} or \emph{vertical}, respectively.
 
 Distinct horizontal lines are disjoint.
-Their union is a closed set, say $H$, and the complement $\RR^2\setminus H$ is a union of disjoint interiors of horizontal strips between pairs of horizontal lines.
+Their union is a closed set, say $H$, and the complement $\RR^2\setminus H$ is a union of disjoint interiors of horizontal strips between pairs of horizontal lines \cite[4.1]{bangert-gutkin}.
+
+\begin{figure}[t!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-10}
+\vskip-0mm
+\end{figure}
 
 Let $\Sigma$ be a horizontal strip with lower and upper horizontal lines $\ell$ and $m$.
 Denote their ideal points by $\lambda^\pm$ and $\mu^\pm$.
@@ -180,31 +196,25 @@ respectively.%
 \footnote{In fact any restriction to $\Sigma$ of Busemann functions with asymptotic direction $u$ can be written as minimum of
 two function $x\mapsto |\lambda^+,x|_{\tilde g}+c_1$ and $x\mapsto |\mu^+,x|_{\tilde g}+c_2$.}
 
-The Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines $\Sigma$ from $\lambda^-$ and $\mu^+$,
-which will be called \emph{North-East lines}.
-The union of all North-East lines in is the minimum set of the sum
+The Busemann functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines $\Sigma$ from $\lambda^-$ to $\mu^+$,
+which will be called \emph{North-East lines} \cite[6.7 and 6.8]{bangert}.
+The union of all North-East lines is the minimum set of the sum
 \[x\mapsto |{-}\vec u,x|_{\tilde g}+|x,\vec u|_{\tilde g}\]
 in $\Sigma$;
 equivalently, it is the minimum set of the sum
 \[x\mapsto |\lambda^-,x|_{\tilde g}+|x,\mu^+|_{\tilde g}.\]
 If North-East lines do not foliate $\Sigma$, then the complement contain interior of North-East strip between North-East lines.
 Such a strip approaches $\ell$ and $m$.
-Since $\tau$ shifts it to another North-East strip, their union is dance at all points of $\ell$ and $m$.
+Since $\tau$ shifts it to another North-East strip, their translates accumulate on both $\ell$ and $m$.
 The same holds for union of all North-East lines.
 
 The same holds in the South-East direction.
 
-
-%???PIC
-
-
-
 \section{Full turn from small turns}
 
-%???PIC
-
 Let $s$ be a geodesic in $(\RR^2,\tilde g)$ with minimizing tails;
-that is, both tails of $s$ are half-lines, so the asymptotic directions $v=\dir^-s$ and $w=\dir^+s$ are defined.
+that is, both tails of $s$ are half-lines.
+Let $v$ and $w$ are asymptotic directions of entrance and exit tail, respectively.
 We say that $s$ \emph{turns across} $u\in\SSS^1$ if $v$, $-v$, $u$, and $w$ appear in the same counterclockwise  cyclic order on $\SSS^1$.
 
 
@@ -219,7 +229,12 @@ Then for any direction $u$ there is a simple geodesic with minimizing tails that
 By the lemma, we can choose finite number of geodesic $s_1,\dots,s_n$ that turn across all directions.
 Since these geodesics have minimizing tails, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
 
-%???PIC
+\begin{figure}[t!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-20}
+\vskip-0mm
+\end{figure}
 
 Construct a polygon $P$ from translated arcs of $r_i$ so that all angles at the join of arc are concave; that is, bigger than $\pi$.
 So the only convex vertices of $P$ are the corners inside the translated arcs.
@@ -244,11 +259,9 @@ If one of the following condition holds, then there is a geodesic $s$ in $(\RR^2
 
 \begin{subthm}{obs:join1}
 There is a closed segment $I\subset (\alpha,\omega)$ such that the minimum of function
-\[f\colon p\mapsto |\bar v,p|_{\tilde g}+|p,w|_{\tilde g}\]
+\[f\colon p\mapsto |\bar v,p|_{\tilde g}+|p,\bar w|_{\tilde g}\]
 for some $p\in I$ is strictly below both endpoint values of $I$.
 \end{subthm}
-
-%PIC???
 
 \begin{subthm}{obs:join2}\label{obs:main2}
 There are two closed segments $I\subset (\alpha,\omega)$ and $J$ on a $\ZZ^2$-shift of $(\alpha,\omega)$ to the side of $w$
@@ -257,8 +270,6 @@ such that the function
 for some pair $(p,q)\in I\times J$
 is strictly below its boundary values of $I\times J$.
 \end{subthm}
-
-%PIC???
 
 \end{thm}
 
@@ -296,6 +307,13 @@ Applying an $\SL(2,\ZZ)$-matrix, we may assume that $u=(1,0)$;
 so it corresponds to the horizontal shift $\tau\colon(x,y)\mapsto (x+1,y)$.
 Choose a vertical periodic line $(\alpha,\omega)$.
 
+\begin{figure}[b!]
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-30}
+\vskip-0mm
+\end{figure}
+
 Further we use terminology from the end of~§~\ref{sec:prelim}.
 
 If each horizontal strip is foliated by North-East or South-East lines, then we get a $\ZZ^2$-periodic geodesic foliation of $(\RR^2,\tilde g)$.
@@ -308,12 +326,12 @@ Therefore, we can choose a closed interval $I\subset (\alpha,\omega)$ arbitrary 
 \[f_1(p)=|\mu^-,p|_{\tilde g}+|p,\lambda^+|_{\tilde g}.\]
 Recall that on $\Sigma$ the function $f_1$ coincides with $|-\cev u,p|_{\tilde g}+|p,\cev u|_{\tilde g}+c_1$ for some constant $c_1$.
 
-Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ arbitrary close to $\ell$ that meets the condition in \ref{obs:join1} for the function
+Repeating the argument in North-East direction, we get a closed interval $J\subset (\alpha,\omega)$ much closer to $\ell$ so that meets the condition in \ref{obs:join1} for the function
 \[f_2(q)=|\lambda^-,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.\]
 Again, $f_2$ coincides with $|{-}\vec u,q|_{\tilde g}+|q,\vec u|_{\tilde g}+c_2$ on $\Sigma$ for some constant $c_2$.
 
 Let us move $J$ far to the right from $I$, applying a huge horizontal shift $\tau^N$.
-Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle \cite[5.7]{bangert-gutkin}.
+Now minimizing geodesics between any points $p\in I$ and $q\in J$ nearly approach $\ell$ in the middle \cite[5.1 and 5.7]{bangert-gutkin}.
 Thus we can conclude that the pair $I$ and $J$ meet the condition in \ref{obs:join2} for the function
 \begin{align*}
 f_3(p,q)=|\mu^-,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.
@@ -330,12 +348,25 @@ $w$ close to $u$ and lying on its left side.
 Again the observation finishes the proof.
 \qeds
 
-\section{Remarks}
+\section{Finsler case}
 
-The proof of Theorem~\ref{thm:main} applies to smooth reversible strictly convex Finsler metrics.
-In the nonreversible case, foliation by oriented minimizing lines can coexist with a closed geodesic in the covering plane,
-but it must have turning number zero, as for example figure eight.
-This is related to the problem posed by Jan Philipp Schröder \cite[10.1]{schroeder-survey}.
+Our proof applies to smooth reversible strictly convex Finsler metrics.
+Jan Philipp Schröder \cite[10.1]{schroeder-survey} asked if absence of simple closed geodesic forces existence of geodesic foliation.
+Our proof has several places where we used reversibility of the metric, but non of them seems to be crucial.
+
+The presented proof of if part by Y. Colin de Verdière, implies that if the universal cover of nonreversible Finsler torus admits oriented geodesic foliation, then any closed geodesic have to have turning number zero;
+in particular, it must have a self-intersection.
+
+\begin{wrapfigure}{r}{45mm}
+\centering
+\vskip-8mm
+\includegraphics{mppics/pic-40}
+\vskip-0mm
+\end{wrapfigure}
+
+It is possible to realize a figure-eight curve as closed geodesic on a universal cover of torus with parallel oriented geodesic meridians.
+Foliate the plane by parallel oriented lines; choose a smooth figure-eight curve that does not go in the direction of the foliation; modify the Euclidean metric in a neighborhood of the curve, making it geodesic; keeping the metric intact close to the direction of the foliation.
+This metric can be patched into a standard torus.
 
 \parbf{Acknowledgments.}
 The proof was found in collaboration with AI (GPT-6.2 Astra).

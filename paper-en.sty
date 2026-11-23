@@ -84,6 +84,7 @@ isbn=false]{biblatex}
 \def\ex{\mathrm{err}}
 
 \def\RR{\mathbb{R}}
+\def\S{\mathfrak{S}}
 \def\SSS{\mathbb{S}}
 \def\SL{\mathrm{SL}}
 \def\TT{\mathbb{T}}
@@ -102,9 +103,12 @@ isbn=false]{biblatex}
   \vskip\medskipamount}
 \def\emptyset{\varnothing}
 
-\newcommand{\cev}[1]{\mathord{\mathpalette\cevaux{#1}}}
-\newcommand{\cevaux}[2]{%
-  \rlap{\reflectbox{$#1\vec{\phantom{#2}}\mkern3mu$}}#2}
+\DeclareFontFamily{U}{stixvec}{}
+\DeclareFontShape{U}{stixvec}{m}{n}{<-> s*[0.9] stix2-mathit}{}
+\DeclareSymbolFont{stixvec}{U}{stixvec}{m}{n}
+\DeclareMathAccent{\cev}{\mathord}{stixvec}{"91}
+\DeclareMathAccent{\vec}{\mathord}{stixvec}{"92}
+
 
 
 %\usepackage{chngcntr}
