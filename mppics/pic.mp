@@ -186,11 +186,13 @@ draw subpath (.9,1) of p1 shifted ((-1.2,0)*u) withcolor .5;
 drawarrow subpath (0,.9) of p1 shifted ((-.4,0)*u) withcolor .5;
 draw subpath (.9,1) of p1 shifted ((-.4,0)*u) withcolor .5;
 
-drawarrow subpath (0,1.3) of p8;
-drawarrow subpath (1.3,2.7) of p8;
-drawarrow subpath (2.7,5.3) of p8;
-drawarrow subpath (5.3,6.7) of p8;
-draw subpath (6.7,8) of p8;
+drawarrow subpath (0,1) of p8;
+drawarrow subpath (1,2) of p8;
+drawarrow subpath (2,3) of p8;
+drawarrow subpath (3,5) of p8;
+drawarrow subpath (5,6) of p8;
+drawarrow subpath (6,7) of p8;
+draw subpath (7,8) of p8;
 
 endfig;
 
