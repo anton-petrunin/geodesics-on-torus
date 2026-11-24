@@ -62,8 +62,11 @@ A geodesic that runs along a leaf cannot close up.
 Any other geodesic crosses the leaves transversely and always in the same direction, so it cannot return to a leaf it has crossed.
 \qeds
 
-Our proof of part \ref{SHORT.thm:main+=>} was inspired by an argument of Eva Glasmachers and Gerhard Knieper \cite[proofs of 3.2 and 3.4]{glasmachers-knieper} and earlier result of Sigurd Angenent \cite{angenent}.
-They showed that if a Riemannian 2-torus has a contractible geodesic loop, then its universal cover has a simple closed geodesic.
+I was stuck on part~\ref{SHORT.thm:main+=>} until I came across an argument by Eva Glasmachers and Gerhard Knieper \cite[proofs of 3.2 and 3.4]{glasmachers-knieper}.
+Following an idea of Sigurd Angenent \cite{angenent}, they shorten a loop around a set of geodesic arcs that the loop cannot cross.
+A similar use of geodesic polygons goes back to Stefan Cohn-Vossen \cite{convossen,bangert1981}.
+I later learned that Jan Philipp Schröder had suggested the same idea \cite[§~10.1, Fig.~9]{schroeder-survey}.
+
 
 \section{Preliminaries}\label{sec:prelim}
 
@@ -231,8 +234,6 @@ Then for any direction $u$ there is a simple geodesic with minimizing tails that
 \end{thm}
 
 This lemma is closely related to result of Leonid Polterovich about tori with sufficiently large bump \cite{polterovich}.
-
-The idea in the reduction was already sketched Jan Philipp  Schröder \cite[§~10.1 Fig.~9]{schroeder-survey}; it could be traced back to the proof of Stephan Cohn-Vossen \cite{convossen,bangert1981}.
 
 \parbf{Proof of \ref{thm:main+=>} modulo the key lemma.}
 By the lemma, we can choose geodesics $s_1,\dots,s_n$ that together turn across all directions.
