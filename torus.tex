@@ -33,7 +33,7 @@ A Riemannian 2-dimensional torus $(\TT^2,g)$ has no contractible closed geodesic
 
 The question was motivated by a remark in the book of Mikhael Gromov \cite[7.9]{gromov}.
 I put this question to everyone I could get hold of \cite{petrunin2022, petrunin2020}; over the years I came to believe that there could be no counterexample.
-Nearly the same problem for Finsler tori was posed by Jan Philipp Schröder \cite[10.1]{schroeder-survey}; he also sketched an approach that we a going to follow.
+Nearly the same problem for Finsler tori was posed by Jan Philipp Schröder \cite[10.1]{schroeder-survey}
 We return to it in the last section.
 
 We prove the following slightly stronger theorem.
@@ -62,7 +62,7 @@ A geodesic that runs along a leaf cannot close up.
 Any other geodesic crosses the leaves transversely and always in the same direction, so it cannot return to a leaf it has crossed.
 \qeds
 
-Our proof of part \ref{SHORT.thm:main+=>} was inspired by an argument of Eva Glasmachers and Gerhard Knieper \cite[proofs of 3.2 and 3.4]{glasmachers-knieper}.
+Our proof of part \ref{SHORT.thm:main+=>} was inspired by an argument of Eva Glasmachers and Gerhard Knieper \cite[proofs of 3.2 and 3.4]{glasmachers-knieper} and earlier result of Sigurd Angenent \cite{angenent}.
 They showed that if a Riemannian 2-torus has a contractible geodesic loop, then its universal cover has a simple closed geodesic.
 
 \section{Preliminaries}\label{sec:prelim}
@@ -162,7 +162,7 @@ Their minimum sets are described in the next paragraph.
 \paragraph{Strips.}
 A line in $(\RR^2,\tilde g)$ is called \emph{periodic} if it is invariant under a nonzero $\ZZ^2$-shift, say $\tau\colon (x,y)\mapsto (x+m,y+n)$;
 we can always assume that $m$ and $n$ are relatively prime.
-The $\tau$-periodic lines are the lifts of shortest closed geodesics on the torus in the homotopy class $(m,n)$ \cite[6.6]{bangert}.
+The $\tau$-periodic lines are the lifts of shortest closed geodesics on the torus in the homotopy class $(m,n)$ \cite[6.6]{bangert1988}.
 
 If $\ell$ is periodic line for a shift in direction $u$ (which must be rational), then (for the right orientation) $\ell$ is calibrated by the following four functions:
 \[x\mapsto |\cev u,x|_{\tilde g},
@@ -204,7 +204,7 @@ respectively.%
 $x\mapsto |\lambda^+,x|_{\tilde g}+c_1$ and $x\mapsto |\mu^+,x|_{\tilde g}+c_2$.}
 
 In the interior of $\Sigma$, the functions $x\mapsto |\vec u,x|_{\tilde g}$ and $x\mapsto -|{-}\vec u,x|_{\tilde g}$ calibrate lines from $\lambda^-$ to $\mu^+$.
-We call them \emph{North-East lines} \cite[6.7 and 6.8]{bangert}.
+We call them \emph{North-East lines} \cite[6.7 and 6.8]{bangert1988}.
 The union of all North-East lines is the minimum set of the sum
 \[x\mapsto |{-}\vec u,x|_{\tilde g}+|x,\vec u|_{\tilde g}\]
 in the interior of $\Sigma$.
@@ -230,7 +230,9 @@ Then for any direction $u$ there is a simple geodesic with minimizing tails that
 
 \end{thm}
 
-The idea in the following reduction is due to Jan Philipp  Schröder \cite[§~10.1 Fig.~9]{schroeder-survey}.
+This lemma is closely related to result of Leonid Polterovich about tori with sufficiently large bump \cite{polterovich}.
+
+The idea in the reduction was already sketched Jan Philipp  Schröder \cite[§~10.1 Fig.~9]{schroeder-survey}; it could be traced back to the proof of Stephan Cohn-Vossen \cite{convossen,bangert1981}.
 
 \parbf{Proof of \ref{thm:main+=>} modulo the key lemma.}
 By the lemma, we can choose geodesics $s_1,\dots,s_n$ that together turn across all directions.
@@ -377,11 +379,14 @@ Choose a smooth oriented figure eight $\gamma$ whose tangent never points in the
 Modify the Euclidean norm near the positive tangent directions of $\gamma$ to make it geodesic and keep the Euclidean norm untouched near the direction of the foliation.
 This local modification can be made in a disk on a flat torus.
 
+This example shows that reversibility is essential in Angenent's lemma on self-intersecting lifts of closed geodesics \cite{angenent}.
+
 \parbf{Acknowledgments.}
 I want to thank Robert Bryant, Dmitri Burago, and Alexandre Eremenko for helpful discussions, both in person and on MathOverflow.
 The proof was found in collaboration with AI (GPT-6.2 Astra).
 
 {\sloppy
 \def\emph{\textit}
-\printbibliography[heading=bibintoc]\fussy}
+\printbibliography[heading=bibintoc]
+\fussy}
 \end{document}
