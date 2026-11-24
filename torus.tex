@@ -22,23 +22,23 @@ pdfauthor={\theauthors}}
 \maketitle
 
 \begin{abstract}
-We show that a Riemannian 2-dimesional torus has no contractible closed geodesics if and only if it admits a geodesic foliation.
+We show that a Riemannian 2-dimensional torus has no contractible closed geodesics if and only if it admits a geodesic foliation.
 \end{abstract}
 
 \section{Introduction}
 
 \begin{thm}{Theorem}\label{thm:main}
-A Riemannian 2-dimesional torus $(\TT^2,g)$ has no contractible closed geodesics if and only if it admits a geodesic foliation.
+A Riemannian 2-dimensional torus $(\TT^2,g)$ has no contractible closed geodesics if and only if it admits a geodesic foliation.
 \end{thm}
 
 The question was motivated by a remark in the book of Mikhael Gromov \cite[7.9]{gromov}.
-It took me several years to believe that the answer might be ``yes'' \cite{petrunin2022, petrunin2020}.
-Nearly the same problem for Finsler tori was posed Jan Philipp Schröder \cite[10.1]{schroeder-survey}.
+I put this question to everyone I could get hold of \cite{petrunin2022, petrunin2020}; over the years I came to believe that there could be no counterexample.
+
+Nearly the same problem for Finsler tori was posed by Jan Philipp Schröder \cite[10.1]{schroeder-survey}.
 We return to it in the last section.
 
-We are going to prove following theorem, which is slightly stronger.
+We prove the following slightly stronger theorem.
 Indeed, a contractible closed geodesic in $(\TT^2,g)$ lifts to a closed geodesic in the universal Riemannian covering $(\RR^2,\tilde g)$.
-
 
 \begin{thm}{Theorem}\label{thm:main+}
 Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
@@ -68,8 +68,8 @@ They showed that if a Riemannian 2-torus has a contractible geodesic loop, then 
 
 \section{Preliminaries}\label{sec:prelim}
 
-Let us recall needed results and fix notation.
-A few pages in the lecture notes of Hung Vinh Tran and Yifeng Yu \cite[§ 6.4.1]{tran-yu} provide proofs for good half of this section.
+Let us recall the results we need and fix notation.
+For an introduction to minimizing geodesics and their Busemann functions on the torus, see the lecture notes of Hung Vinh Tran and Yifeng Yu \cite[§ 6.4.1]{tran-yu}.
 
 Let $(\TT^2,g)$ be a Riemannian torus and $(\RR^2,\tilde g)$ its universal Riemannian cover;
 so $\tilde g$ is a $\ZZ^2$-periodic Riemannian metric on $\RR^2$.
@@ -83,7 +83,7 @@ The map $F\colon\RR^2\to C(\RR^2)$ defined by $z\mapsto f_z$ is an embedding wit
 the closure of $F(\RR^2)$ is called the \emph{horocompactification} of $(\RR^2,\tilde g)$.
 The points added in the compactification will be called \emph{ideal points} of $(\RR^2,\tilde g)$.
 
-Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which is called \emph{Busemann function} of $\xi$.
+Each ideal point $\xi$ is defined by its function in $C(\RR^2)$, which is called the \emph{Busemann function} of $\xi$.
 We write it as $x\mapsto |\xi,x|_{\tilde g}$ or $x\mapsto |x,\xi|_{\tilde g}$, depending on our mood.
 Busemann functions share many properties of distance functions.
 One can think of $|\xi,x|_{\tilde g}$ as the normalized distance from $x$ to $\xi$.
@@ -97,7 +97,7 @@ The proof uses results from \cite[4.15, 6.1, and 8.7(i)]{schroeder-survey}.
 
 
 \paragraph{Lines and half-lines.}
-Let $\gamma$ be a 1-Lipschitz curve, and let $f$ be 1-Lipschitz function.
+Let $\gamma$ be a 1-Lipschitz curve, and let $f$ be a 1-Lipschitz function.
 If
 \[f\circ\gamma(t)\equiv\const-t,\]
 then we say that $\gamma$ is \emph{calibrated} by $f$;
@@ -137,7 +137,7 @@ Furthermore, for irrational $u$, any $\ZZ^2$-shift $\tau$ changes $|\bar u,x|$ b
 that is, the difference $|\bar u,x|-|\bar u,\tau\cdot x|$ depends only on $\tau$ and $u$.
 
 For a rational direction $u\in\SSS^1$, the fiber $\dir^{-1}\{u\}$ is a closed arc of $\S_{\tilde g}$, possibly a point.
-We denote its left and right endpoints by $\cev u$ and $\vec{u}$, respectively.
+We denote its endpoints by $\cev u$ and $\vec{u}$, with the convention below.
 If $\cev u=\vec u$, then $\TT^2$ is foliated by closed geodesics whose lifts have asymptotic direction $u$ \cite[8.7(ii)]{schroeder-survey}.
 For an irrational direction $u$, the fiber is a point, so $\bar u=\cev u=\vec{u}$.%
 \footnote{If $(\TT^2,g)$ is the standard torus of revolution, then $\dir\colon\S_{\tilde g}\to \SSS^1$ collapses just two arcs, one for each orientation of the shortest parallel.}
@@ -165,8 +165,7 @@ A line in $(\RR^2,\tilde g)$ is called \emph{periodic} if it is invariant under 
 we can always assume that $m$ and $n$ are relatively prime.
 The $\tau$-periodic lines are the lifts of shortest closed geodesics on the torus in the homotopy class $(m,n)$ \cite[6.6]{bangert}.
 
-
-If $\ell$ is periodic line for a shift in direction $u$ (which must be rational), then $\ell$ is calibrated by the following four functions:
+If $\ell$ is periodic line for a shift in direction $u$ (which must be rational), then (for the right orientation) $\ell$ is calibrated by the following four functions:
 \[x\mapsto |\cev u,x|_{\tilde g},
 \quad x\mapsto -|{-}\cev u,x|_{\tilde g},
 \quad x\mapsto |\vec u,x|_{\tilde g},
@@ -178,7 +177,7 @@ In this case, periodic lines are called \emph{horizontal} (respectively, \emph{v
 
 Distinct horizontal lines are disjoint.
 Their union is a closed set, say $H$.
-Its complement form by the disjoint interiors of horizontal strips between pairs of horizontal lines \cite[4.1]{bangert-gutkin}.
+Its complement is the union of the disjoint interiors of horizontal strips between pairs of horizontal lines \cite[4.1]{bangert-gutkin}.
 
 \begin{figure}[t!]
 \centering
@@ -236,7 +235,7 @@ The idea in the following reduction is due to Jan Philipp  Schröder \cite[§~10
 
 \parbf{Proof of \ref{thm:main+=>} modulo the key lemma.}
 By the lemma, we can choose geodesics $s_1,\dots,s_n$ that together turn across all directions.
-Since these geodesics have minimizing tails, the quoted Hedlund's theorem implies that each $s_i$ lies on a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
+Since these geodesics have minimizing tails, Hedlund's theorem implies that each $s_i$ stays at a bounded distance from a Euclidean angle, say $r_i$ (made from two Euclidean rays).
 
 \begin{figure}[t!]
 \centering
@@ -245,13 +244,13 @@ Since these geodesics have minimizing tails, the quoted Hedlund's theorem implie
 \vskip-0mm
 \end{figure}
 
-Construct a polygon $P$ from translated arcs of $r_i$ so that angle at each junction is concave; that is, bigger than $\pi$.
+Construct a polygon $P$ from translated arcs of $r_i$ so that the angle at each junction is concave (bigger than $\pi$).
 Thus the only convex vertices of $P$ are the corners within the translated arcs.
 After scaling up $P$, we can approximate these arcs by integer translates of arcs of the $s_i$.
 
-This gives a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with only  concave angles;
-here we apply that minimizing tails can cross transversely at most once.
-Thus the complement of interior of $Q$ is a a locally convex set in $(\RR^2,\tilde g)$.
+This gives a geodesic polygon $Q$ in $(\RR^2,\tilde g)$ with only concave angles.
+Here we use the fact that two minimizing tails can cross transversely at most once.
+Thus the complement of the interior of $Q$ is locally convex in $(\RR^2,\tilde g)$.
 
 It remains to choose a shortest curve $\gamma$ that surrounds $Q$,
 and observe that $\gamma$ is a simple closed geodesic in $(\RR^2,\tilde g)$.
@@ -259,8 +258,8 @@ and observe that $\gamma$ is a simple closed geodesic in $(\RR^2,\tilde g)$.
 
 \section{Gating geodesics}
 
-The following observation provides a tool for constructing geodesic in the key lemma.
-Essentially it says shortening a curve that passes thru a gate (or two) produces a geodesic or a curve that touches one of the gateposts.
+The following observation gives a way to construct the geodesics in the key lemma.
+Essentially, it says that shortening a curve that passes thru a gate (or two) produces a geodesic or a curve that touches one of the gateposts.
 
 \begin{thm}{Observation}\label{obs:join}
 Let $\tilde g$ be a $\ZZ^2$-periodic Riemannian metric on $\RR^2$,
@@ -287,11 +286,12 @@ If we choose a minimum point $p\in I$ of $f$,
 then the concatenation
 \[(\bar v,p]_{\tilde g}\cup[p,\bar w)_{\tilde g}\]
 solves the problem.
-Indeed, the concatenation have to pass thru the gate $I$.
-Thus if there were a corner at $p$, then moving $p$ a bit can decrease $f$.
+Simplicity follows since the two tails lie on opposite sides of the gate line.
+Since $p$ is in the interior of $I$, a corner at $p$, would make it possible to decrease $f$.
 
-\parit{\ref{SHORT.obs:join2}.} Choose a minimum pair $(p,q)\in I\times J$
-of $f$ and by the same argument
+\parit{\ref{SHORT.obs:join2}.}
+Choose a pair $(p,q)\in I\times J$ minimizing $f$.
+The same argument shows that
 \[(\bar v,p]_{\tilde g}\cup[p,q]_{\tilde g}\cup[q,\bar w)_{\tilde g}\]
 is a geodesic.
 \qeds
@@ -306,11 +306,11 @@ It crosses every line from $-\bar u$ to $\bar u$.
 If every point of $(\alpha,\omega)$ lay on such a line, these lines would foliate $(\RR^2,\tilde g)$.
 Thus we can choose a point $p\in (\alpha,\omega)$ that does not minimize the sum $x\z\mapsto |{-}\bar u,x|+|x,\bar u|$.
 
-It follows that some segment $I$ in $(\alpha,\omega)$ meets the condition of the observation for the function
+By periodicity, some segment $I$ in $(\alpha,\omega)$ meets the condition of the observation for the function
 \[f_1(x)=|{-}\bar u,x|+|x,\bar u|.\]
 If $v\approx -u$ and $w\approx u$, then $I$ meets the condition for the function
-\[f_2(x)=|\bar v,x|+|x,\bar w|,\]
-and the observations finishes the proof.
+\[f_2(x)=|\bar v,x|+|x,\bar w|.\]
+We can choose $w$ to the left from $u$ and $v$ to the right from $-u$, and the observations finishes the proof.
 
 
 \parit{Rational case.}
@@ -347,15 +347,12 @@ Thus $I$ and $J$ satisfy the condition in \ref{obs:join2} for the function
 \begin{align*}
 f_3(p,q)=|\mu^-,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\mu^+|_{\tilde g}.
 \intertext{Indeed, $f_3(p,q)\approx f_1(p)+f_2(\tau^{-N}\cdot q)+c_3$ for fixed $c_3$ and large $N$.
-Equivalently, it says that the condition is met for}
+The same condition therefore holds for}
 f_4(p,q)=|{-}\cev u,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\vec u|_{\tilde g},
-\intertext{and therefore for a near by function}
-f_5(p,q)=|\bar v,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\bar w|_{\tilde g};
+\intertext{and, with $N$ now fixed, for the nearby function}
+f_5(p,q)=|\bar v,p|_{\tilde g}+|p,q|_{\tilde g}+|q,\bar w|_{\tilde g}.
 \end{align*}
-here we assume that
-$v$ close to $-u$ and lying on its right side
-and
-$w$ close to $u$ and lying on its left side.
+Here $v$ and $w$ are irrational directions in the upper half-plane, sufficiently close to $-u$ and $u$, respectively.
 Again the observation finishes the proof.
 \qeds
 
